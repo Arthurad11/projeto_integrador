@@ -1,3 +1,4 @@
+import Clientes from "../components/Clientes";
 import Funcionarios from "../components/Funcionarios";
 import Menu from "../components/Menu";
 
@@ -23,6 +24,7 @@ function Dashboard() {
             </aside>
             <main>
                 <Funcionarios/>
+                <Clientes/>
             </main>
 
         </div>
