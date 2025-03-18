@@ -23,8 +23,7 @@ function Dashboard() {
                 </ul>
             </aside>
             <main>
-                <Funcionarios/>
-                <Clientes/>
+                
             </main>
 
         </div>
