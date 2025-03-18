@@ -90,6 +90,12 @@ body{
     background-color: rgb(0, 0, 201);
 }
 
+.criarConta {
+    background: none !important;
+    border: none !important;
+    color: #f8f8ff ;
+}
+
 @media screen and (min-width: 600px){
     .login{
         transform: scale(1.3);
