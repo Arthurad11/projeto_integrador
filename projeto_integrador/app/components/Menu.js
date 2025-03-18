@@ -12,7 +12,7 @@ function Menu() {
 	return (
 		<header>
 			<nav>
-                <a>Bar do zé</a>
+                <a>Bar do Jaum</a>
 
                 <div className="mobile-menu" onClick={toggleMenu}>
                     <div className="line1"></div>
