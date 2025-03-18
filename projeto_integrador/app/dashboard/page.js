@@ -1,3 +1,4 @@
+import Funcionarios from "../components/Funcionarios";
 import Menu from "../components/Menu";
 
 import "./dashboard.css";
@@ -21,7 +22,7 @@ function Dashboard() {
                 </ul>
             </aside>
             <main>
-                
+                <Funcionarios/>
             </main>
 
         </div>
