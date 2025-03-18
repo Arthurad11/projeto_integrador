@@ -4,9 +4,9 @@ import "./cadprod.css"
 function CadProduto() {
     return ( 
     
-    <div class="conjunto">
+    <div className="conjunto">
 
-        <h1 class="titulo"> Cadastro de produto </h1>
+        <h1 className="titulo"> Cadastro de produto </h1>
         <p> Produto: </p>
         <input placeholder="Digite o produto aqui..."/>
         <p> Valor do Produto: </p>
@@ -14,7 +14,7 @@ function CadProduto() {
         <p>Quantidade em UN: </p>
         <input placeholder="Quantas Unidades..."/>
         <br/> <br/>
-        <button class="botao"> Cadastrar </button>
+        <button className="botao"> Cadastrar </button>
 
     </div> );
 }

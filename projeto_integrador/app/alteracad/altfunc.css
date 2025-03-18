@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-.body{
+body{
 
     margin: 0;
     padding: 0;
@@ -10,8 +10,8 @@
 
     font-family: "Open Sans"; 
 
-    background-color: #444;
-    color: #f8f8f8;
+    background-color: #4f4f4f;
+    color: #f8f8ff;
 
     display: flex;
     height: 100vh;
@@ -21,9 +21,9 @@
 
     width: 300px;
 
-    
+    color: #f8f8ff;
     text-align: center;
-    background: #e5e5f0;
+    background: #333;
    
     margin-left: 25px;
     margin-right: 25px; 
@@ -52,14 +52,17 @@
 .conjunto input{
     margin-left: -30px;
     margin-top: -80px;
-    padding: 5px;
-    padding-right: 70px;
-    border-radius: 5px;
-    
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
 }
 
 .botao{
 
+    border: none;
+    background-color: rgb(152, 247, 10);
     margin-top: 40px;
     padding: 20px;
     box-shadow: 1px 2px 3px #444;
@@ -68,6 +71,6 @@
 }
 
 .botao:hover{
-    background: rgb(73, 73, 214);
+    background: rgb(50, 148, 25);
     transition: 0.3s;
 }

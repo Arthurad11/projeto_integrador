@@ -1,29 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
+body{
+
+    margin: 0;
+    padding: 0;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Open Sans"; 
+
+    background-color: #4f4f4f;
+    color: #f8f8ff;
+
+    display: flex;
+    height: 100vh;
+
+}
 .conjunto{
+
+    width: 300px;
+
+    color: #f8f8ff;
     text-align: center;
-    background: #e5e5f0;
-    margin-top: 300px;
-    margin-left: 300px;
-    margin-right: 300px;
-    padding: 100px;
+    background: #333;
+   
+    margin-left: 25px;
+    margin-right: 25px; 
+    padding: 20px;
     box-shadow: 2px 3px 4px #444 ;
     border-radius: 15px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     
     
-
 }
 
 .titulo{
-    margin-top: -40px;
+    margin-top: 40px;
     font-size: 30px;
-    
+    text-align: center;
 
 }
 
 .conjunto p{
-    text-align: left;
+
+    text-align: center;
     margin-left: -30px;
     margin-top: 50px;
 }
@@ -31,13 +52,19 @@
 .conjunto input{
     margin-left: -30px;
     margin-top: -80px;
-    padding: 5px;
-    padding-right: 70px;
-    border-radius: 5px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
 }
 
 .botao{
 
+    border: none;
+    background-color: rgb(152, 247, 10);
     margin-top: 40px;
     padding: 20px;
     box-shadow: 1px 2px 3px #444;
@@ -46,12 +73,12 @@
 }
 
 .botao:hover{
-    background: rgb(73, 73, 214);
+    background: rgb(50, 148, 25);
     transition: 0.3s;
 }
 
-@media screen and (min-widht: 600px) {
-    .conjunto{
-        transform: scale(1.3);
-    }
+.botaoAlterar{
+    background: #333;
+    border: none;
+    color: #f8f8ff;
 }
