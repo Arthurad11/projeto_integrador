@@ -4,25 +4,25 @@ import React, { useState } from "react";
 import "./cliente.css";
 
 function Comanda() {
-    const [total, setTotal] = useState(0);
-    const [selecionados, setSelecionados] = useState({});
+    const [total, criarTotal] = useState(0);
+    const [selecionados, criarSelecionados] = useState({});
 
     const calcularTotal = (valor, checked, id) => {
-        const valorNumerico = Number(valor);
-        setTotal(prevTotal => checked ? prevTotal + valorNumerico : prevTotal - valorNumerico);
-        setSelecionados(prev => ({ ...prev, [id]: checked }));
+        const valorNumerico = Numero(valor);
+        criarTotal(prevTotal => checked ? prevTotal + valorNumerico : prevTotal - valorNumerico);
+        criarSelecionados(prev => ({ ...prev, [id]: checked }));
     };
 
     const resetarComanda = () => {
-        setTotal(0);
-        setSelecionados({});
+        criarTotal(0);
+        criarSelecionados({});
     };
 
     return (
         <div className="container">
             <div className="body">
-                <h1>🍺 Bem-vindo ao Boteco do João 🍺</h1>
-                <br/>
+                <h1>🍺 Bem-vindo ao Boteco do João </h1>
+                
 
                 <h2> Pedido - Mesa 7</h2>
                 <br/>
@@ -60,7 +60,7 @@ function Comanda() {
                 <br/><br/><br/>
 
                 <label id="total">Total: R$ {total.toFixed(2)}</label>
-                <br/><br/><br/>
+                <br/><br/>
 
                 <div className="button-container">
                     <button className="button buttonexcluir" type="button" onClick={resetarComanda}>
