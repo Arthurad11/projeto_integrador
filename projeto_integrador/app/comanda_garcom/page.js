@@ -4,37 +4,32 @@ import React, { useState } from "react";
 import "./garcom.css"; 
 
 function PainelGarcom() {
-    const [mesaSelecionada, setMesaSelecionada] = useState(""); // armazena a mesa selecionada
-    const [mesaComanda, setMesaComanda] = useState(null); // armazena a comanda da mesa (se houver)
+    const [mesaSelecionada, setMesaSelecionada] = useState(""); // armazenar a mesa selecionada
+    const [mesaComanda, setMesaComanda] = useState(""); // variável para armazenar a comanda
 
     // Lista de mesas com status de "livre" ou "ocupada"
     const mesas = [
         { id: 1, status: "livre" },
-        { id: 2, status: "ocupada", comanda: "Comanda Mesa 2 - Cliente A" },
+        { id: 2, status: "ocupada" },
         { id: 3, status: "livre" },
-        { id: 4, status: "ocupada", comanda: "Comanda Mesa 4 - Cliente B" },
+        { id: 4, status: "ocupada" },
         { id: 5, status: "livre" },
-        { id: 6, status: "ocupada", comanda: "Comanda Mesa 6 - Cliente C" },
+        { id: 6, status: "ocupada" },
         { id: 7, status: "livre" },
-        { id: 8, status: "ocupada", comanda: "Comanda Mesa 8 - Cliente D" },
+        { id: 8, status: "ocupada" },
         { id: 9, status: "livre" },
-        { id: 10, status: "ocupada", comanda: "Comanda Mesa 10 - Cliente E" },
+        { id: 10, status: "ocupada" },
     ];
 
-    // Função para visualizar a comanda de uma mesa ocupada
-    const visualizarComanda = (mesa) => {
-        if (mesa.status === "ocupada") {
-            setMesaComanda(mesa.comanda); // Exibe a comanda da mesa
-            alert(`Comanda da Mesa ${mesa.id}: ${mesa.comanda}`);
-        } else {
-            setMesaComanda(null);
-            alert(`Criando comanda para a Mesa ${mesa.id}`);
-        }
+    // Função para visualizar a comanda da mesa selecionada
+    const visualizarPedido = (mesa) => {
+        setMesaComanda(mesa); // Define a comanda da mesa
+        alert(`Visualizando pedido da Mesa ${mesa}`);
     };
 
-    // Função para finalizar a comanda
+    // Função para finalizar a comanda da mesa selecionada
     const finalizarComanda = () => {
-        if (!mesaSelecionada) {
+        if (!mesaSelecionada) { // Verifica se alguma mesa foi selecionada antes de finalizar
             alert("Por favor, selecione uma mesa para finalizar a comanda.");
             return;
         }
@@ -52,17 +47,17 @@ function PainelGarcom() {
                 <div className="mesas_coluna">
                     <h3>Mesas Livres</h3>
                     {mesas.filter(mesa => mesa.status === "livre").map(mesa => (
-                        <button key={mesa.id} className="mesa_livre" onClick={() => visualizarComanda(mesa)}>
+                        <button key={mesa.id} className="mesa_livre" onClick={() => visualizarPedido(mesa.id)}>
                             Mesa {mesa.id} (Livre)
                         </button>
                     ))}
                 </div>
-
+                
                 {/* Coluna de Mesas Ocupadas */}
                 <div className="mesas_coluna2">
                     <h3>Mesas Ocupadas</h3>
                     {mesas.filter(mesa => mesa.status === "ocupada").map(mesa => (
-                        <button key={mesa.id} className="mesa_ocupada" onClick={() => visualizarComanda(mesa)}>
+                        <button key={mesa.id} className="mesa_ocupada" onClick={() => visualizarPedido(mesa.id)}>
                             Mesa {mesa.id} (Ocupada)
                         </button>
                     ))}
@@ -92,16 +87,6 @@ function PainelGarcom() {
             {/* Botão para Excluir Comanda */}
             <div className="button-container">
                 <button className="buttonexcluir" onClick={() => alert("Comanda excluída!")}>Excluir</button>
-            </div>
-
-            {/* Exibição da Comanda */}
-            <div className="comanda">
-                {mesaComanda && (
-                    <div>
-                        <h3>Comanda Selecionada:</h3>
-                        <p>{mesaComanda}</p>
-                    </div>
-                )}
             </div>
         </div>
     );
