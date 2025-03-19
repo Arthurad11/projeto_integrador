@@ -1,6 +1,8 @@
+"use client"
+
 import Clientes from "../components/Clientes";
 import Funcionarios from "../components/Funcionarios";
-import Menu from "../components/Menu";
+import Menu2 from "../components/Menu2";
 
 import "./dashboard.css";
 
@@ -10,7 +12,7 @@ function Dashboard() {
 
     return ( 
         <div>
-            <Menu />
+            <Menu2 />
             <aside>
                 <ul>
                     <li onClick={()=> {}} className="first" >Dashboard</li>

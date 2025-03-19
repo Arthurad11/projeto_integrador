@@ -76,7 +76,22 @@ ul li{
         order: -1;
     }
 
+    .nav-active{
+        transform: translateX(0);
+        transition: transform 0.5s;
+    }
+
+    
+    
 }
+
+@media screen and (min-width: 1000px){
+    .menu{
+        display: none;
+    }
+    
+}
+
 
 ul.active{
     transform: translateX(0);
