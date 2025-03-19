@@ -6,6 +6,7 @@ import Funcionarios from "../components/Funcionarios";
 import Menu2 from "../components/Menu2";
 import { useState } from "react";
 import "./dashboard.css";
+import Faturamento from "../components/Faturamento";
 
 function Dashboard() {
 	const [dashboard, alteraDashboard] = useState();
@@ -110,11 +111,7 @@ function Dashboard() {
 
                 } */}
 
-					{/* {
-                    alteraFaturamento == true &&
-
-
-                } */}
+					{faturamento == true && <Faturamento />}
 
 					{estoque == true && <Estoque />}
 

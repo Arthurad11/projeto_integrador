@@ -5,6 +5,7 @@ import "./menu2.css";
 import Estoque from "./Estoque";
 import Clientes from "./Clientes";
 import Funcionarios from "./Funcionarios";
+import Faturamento from "./Faturamento";
 
 function Menu2() {
 	function toggleMenu() {
@@ -112,8 +113,8 @@ function Menu2() {
 					</ul>
 				</nav>
 			</header>
-            <main>
-                {/* {
+			<main>
+				{/* {
                     alteraDashboard == true && 
 
                     
@@ -121,39 +122,16 @@ function Menu2() {
 
                 } */}
 
-                {/* {
-                    alteraFaturamento == true &&
+				{faturamento == true && <Faturamento />}
 
+				{estoque == true && <Estoque />}
 
-                } */}
+				{}
 
-                {
-                    estoque == true &&
-                    <Estoque/>
+				{clientes == true && <Clientes />}
 
-
-                }
-
-                {
-
-
-
-                }
-
-                {
-                    clientes == true &&
-                    <Clientes/>
-
-
-                }
-
-                {
-                    funcionarios == true &&
-                    <Funcionarios/>
-
-
-                }
-            </main>
+				{funcionarios == true && <Funcionarios />}
+			</main>
 		</div>
 	);
 }

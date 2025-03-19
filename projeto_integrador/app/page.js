@@ -1,3 +1,6 @@
+"use client"
+
+import Faturamento from "./components/Faturamento";
 import Menu from "./components/Menu";
 
 function Home() {
@@ -5,6 +8,8 @@ function Home() {
 
     <div>
       <Menu />
+
+      <Faturamento />
     </div>
 
    );
