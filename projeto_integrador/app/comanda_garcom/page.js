@@ -1,10 +1,12 @@
 "use client";
 
+
+
 import React, { useState } from "react";
-import "./garcom.css"; // Importação do arquivo de estilos CSS
+import "./garcom.css"; 
 
 function PainelGarcom() {
-    const [mesaSelecionada, setMesaSelecionada] = useState(""); // Estado para armazenar a mesa selecionada
+    const [mesaSelecionada, setMesaSelecionada] = useState(""); //  armazenar a mesa selecionada
 
     // Lista de mesas com status de "livre" ou "ocupada"
     const mesas = [
