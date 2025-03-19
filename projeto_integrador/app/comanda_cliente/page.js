@@ -1,29 +1,23 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./cliente.css";
 
 function Comanda() {
-    // Estado para armazenar o total gasto
     const [total, setTotal] = useState(0);
-    
-    // Estado para armazenar os produtos selecionados
     const [selecionados, setSelecionados] = useState({});
+    const [mesaId, setMesaId] = useState(7); // Default Mesa
 
     // Função para calcular o total conforme os itens são selecionados ou desmarcados
     const calcularTotal = (valor, checked, id) => {
-        const valorNumerico = Number(valor); // Corrigido erro "Numero" para "Number"
-        
-        // Atualiza o total dependendo se o item foi marcado ou desmarcado
+        const valorNumerico = Number(valor);
         setTotal(prevTotal => checked ? prevTotal + valorNumerico : prevTotal - valorNumerico);
-        
-        // Atualiza os itens selecionados
         setSelecionados(prev => ({ ...prev, [id]: checked }));
     };
 
-    // Função para exibir o total ao clicar no botão
-    const exibirTotal = () => {
-        alert(`Total gasto: R$ ${total.toFixed(2)}`);
+    // Função para adicionar um produto (simulação)
+    const adicionarProduto = () => {
+        alert("Produto adicionado à comanda!");
     };
 
     // Função para resetar a comanda
@@ -32,12 +26,19 @@ function Comanda() {
         setSelecionados({});
     };
 
+    // UseEffect para simular a criação de uma comanda para mesas livres
+    useEffect(() => {
+        if (mesaId && mesaId % 2 === 0) {  // Simula uma mesa ocupada
+            alert(`Comanda da Mesa ${mesaId} carregada!`);
+        }
+    }, [mesaId]);
+
     return (
         <div className="container">
             <div className="body">
                 <h1>🍺 Bem-vindo ao Boteco do João </h1>
 
-                <h2>Pedido - Mesa 7</h2>
+                <h2>Pedido - Mesa {mesaId}</h2>
 
                 <h3>✨ Promoção do Dia ✨</h3>
                 <div className="item">
@@ -87,9 +88,9 @@ function Comanda() {
                 <br/><br/>
 
                 <div className="button-container">
-                    {/* Botão para exibir um alerta com o total gasto */}
-                    <button className="button" onClick={exibirTotal}>
-                        Ver Total
+                    {/* Botão para adicionar um produto */}
+                    <button className="button" onClick={adicionarProduto}>
+                        Adicionar Produto
                     </button>
 
                     {/* Botão para resetar a comanda */}
