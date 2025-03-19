@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+
+    display: flexbox;
 }
 
 aside{
@@ -29,6 +31,7 @@ aside ul li{
     padding-left: 0px;
     
 }
+
 
 .first{
     padding-top: 50px;
@@ -81,4 +84,22 @@ nav{
 
 img{
     color: red;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    
 }
