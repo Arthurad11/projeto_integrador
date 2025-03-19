@@ -1,0 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Impede a rolagem */
+}
+
+img {
+    width: 100%;
+    height: 100vh; /* Garante que a imagem ocupe toda a tela */
+    /* Ajusta a imagem para cobrir a tela sem distorção */
+    
+}

@@ -1,6 +1,7 @@
 "use client"
 
 import "./menu.css";
+import { useState } from "react";
 
 function Menu() {
 
@@ -9,10 +10,15 @@ function Menu() {
         menu.classList.toggle('active');
     }
 
+	const[home, alteraHome] = useState()
+	const[produtos, alteraProdutos] = useState()
+	const[login, alteraLogin] = useState()
+
+
 	return (
 		<header>
 			<nav>
-                <a>Bar do Jaum</a>
+                <a>Bar do João</a>
 
                 <div className="mobile-menu" onClick={toggleMenu}>
                     <div className="line1"></div>
@@ -21,9 +27,9 @@ function Menu() {
                 </div>
 
 				<ul>
-					<li>Home</li>
-					<li>Produtos</li>
-					<li className="login">Login</li>
+					<li onClick={()=> {alteraHome(true)}}>Home</li>
+					<li onClick={()=> {alteraProdutos(true)}}>Produtos</li>
+					<li onClick={()=> {alteraLogin(true)}}className="login">Login</li>
 				</ul>
 			</nav>
 		</header>
