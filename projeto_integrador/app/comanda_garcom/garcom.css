@@ -1,0 +1,108 @@
+body {
+    background: #4f4f4f;
+    color: #f8f8ff;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #08070744;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: white;
+}
+
+.mesa_container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.mesas_coluna, .mesas_coluna2 {
+    width: 45%;
+    padding: 10px;
+    margin: 5px;
+    background-color: #08070744;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.mesa_livre {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.mesa_ocupada {
+    background-color: #FF5733;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.mesa_selecao {
+    margin: 20px 0;
+}
+
+.bntselect {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: black;
+    color: white;
+}
+
+.buttonfinalizar {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.buttonfinalizar:hover {
+    background-color: #0056b3;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.buttonexcluir {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttonexcluir:hover {
+    background-color: #c82333;
+}
+
+.comanda {
+    margin-top: 20px;
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
