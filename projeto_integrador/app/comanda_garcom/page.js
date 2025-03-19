@@ -55,7 +55,7 @@ function PainelGarcom() {
                         onChange={(e) => criarMesaSelecionada(e.target.value)}
                     >
                         <option value="">Escolha uma mesa </option>
-                        <option value="1" className="bntlado">Mesa 1</option>
+                        <option value="1" className="bntlado">Mesa 1</option> <br/>
                         <option value="2" className="bntlado">Mesa 2</option>
                         <option value="3" className="bntlado">Mesa 3</option>
                     </select>
