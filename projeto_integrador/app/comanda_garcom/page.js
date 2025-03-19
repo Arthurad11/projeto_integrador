@@ -1,6 +1,7 @@
 "use client";
 
 
+
 import React, { useState } from "react";
 import "./garcom.css"; 
 
@@ -16,6 +17,13 @@ function PainelGarcom() {
         { id: 4, status: "ocupada" },
         { id: 5, status: "livre" },
         { id: 6, status: "ocupada" },
+        { id: 7, status: "livre" },
+        { id: 8, status: "ocupada" },
+        { id: 9, status: "livre" },
+        { id: 10, status: "ocupada" },
+
+
+
 
     ];
 
@@ -51,10 +59,10 @@ function PainelGarcom() {
                 </div>
                 
                 {/* Coluna de Mesas Ocupadas */}
-                <div className="mesas_coluna">
+                <div className="mesas_coluna2">
                     <h3>Mesas Ocupadas</h3>
                     {mesas.filter(mesa => mesa.status === "ocupada").map(mesa => (
-                        <button key={mesa.id} className="mesa_ocupado" onClick={() => visualizarPedido(mesa.id)}>
+                        <button key={mesa.id} className="mesa_ocupada" onClick={() => visualizarPedido(mesa.id)}>
                             Mesa {mesa.id} (Ocupada)
                         </button>
                     ))}
@@ -75,7 +83,7 @@ function PainelGarcom() {
                             Mesa {mesa.id}
                         </option>
                     ))}
-                </select>
+                </select> <br/> <br/>
                 <button className="buttonfinalizar" onClick={finalizarComanda}>
                     Finalizar Comanda
                 </button>

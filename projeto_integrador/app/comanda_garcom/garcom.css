@@ -9,7 +9,7 @@ body{
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color:  #08070744;
     border-radius: 10px;
     max-width: 600px;
     margin: 20px auto;
@@ -17,13 +17,11 @@ body{
     
 }
 
-h1 {
-    color: #333;
+h1 , h2 , h3 {
+    color: white;
 }
 
-h2, h3 {
-    color: #555;
-}
+
 
 /* Estilização das mesas */
 .mesa_container {
@@ -35,9 +33,24 @@ h2, h3 {
 .mesas_coluna {
     width: 45%;
     padding: 10px;
-    background: white;
-    border-radius: 10px;
+    margin: 5px;
+    background-color:  #08070744;
+    border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+
+.mesas_coluna2 {
+    width: 45%;
+    padding: 10px;
+    margin: 5px;
+    background-color:  #08070744;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+    
 }
 
 .mesa_livre {
@@ -48,9 +61,10 @@ h2, h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    
 }
 
-.mesa_ocupado {
+.mesa_ocupada {
     background-color: #FF5733;
     color: white;
     padding: 10px;
@@ -60,9 +74,7 @@ h2, h3 {
     border-radius: 5px;
 }
 
-.mesa_livre:hover, .mesa_ocupado:hover {
-    opacity: 0.8;
-}
+
 
 /* Estilização do select e botão de finalização */
 .mesa_selecao {
@@ -74,6 +86,8 @@ h2, h3 {
     font-size: 16px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    background-color: black;
+    color: white;
 }
 
 .buttonfinalizar {
