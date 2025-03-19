@@ -9,7 +9,6 @@ function Home() {
     <div>
       <Menu />
 
-      <Faturamento />
     </div>
 
    );
