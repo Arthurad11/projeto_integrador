@@ -12,7 +12,7 @@ function Menu2() {
 		menu.classList.toggle("active");
 	}
 
-	const [dashboard, alteraDashboard] = useState();
+	const [home, alteraHome] = useState();
 	const [faturamento, alteraFaturamento] = useState();
 	const [estoque, alteraEstoque] = useState();
 	const [pedidos, alteraPedidos] = useState();
@@ -23,7 +23,7 @@ function Menu2() {
 		<div>
 			<header>
 				<nav>
-					<a>Bar do Jaum</a>
+					<a>Bar do João</a>
 
 					<div className="mobile-menu" onClick={toggleMenu}>
 						<div className="line1"></div>
@@ -34,7 +34,7 @@ function Menu2() {
 					<ul className="menu">
 						<li
 							onClick={() => {
-								alteraDashboard(true);
+								alteraHome(true);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -42,12 +42,12 @@ function Menu2() {
 								alteraFuncionarios(false);
 							}}
 							className="first">
-							Dashboard
+							Home
 						</li>
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(true);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -59,7 +59,7 @@ function Menu2() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(true);
 								alteraPedidos(false);
@@ -71,7 +71,7 @@ function Menu2() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(true);
@@ -83,7 +83,7 @@ function Menu2() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -95,7 +95,7 @@ function Menu2() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);

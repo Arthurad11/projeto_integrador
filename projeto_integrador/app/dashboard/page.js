@@ -8,7 +8,7 @@ import { useState } from "react";
 import "./dashboard.css";
 
 function Dashboard() {
-	const [dashboard, alteraDashboard] = useState();
+	const [home, alteraHome] = useState();
 	const [faturamento, alteraFaturamento] = useState();
 	const [estoque, alteraEstoque] = useState();
 	const [pedidos, alteraPedidos] = useState();
@@ -23,7 +23,7 @@ function Dashboard() {
 					<ul>
 						<li
 							onClick={() => {
-								alteraDashboard(true);
+								alteraHome(true);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -31,12 +31,12 @@ function Dashboard() {
 								alteraFuncionarios(false);
 							}}
 							className="first">
-							Dashboard
+							Home
 						</li>
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(true);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -48,7 +48,7 @@ function Dashboard() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(true);
 								alteraPedidos(false);
@@ -60,7 +60,7 @@ function Dashboard() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(true);
@@ -72,7 +72,7 @@ function Dashboard() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);
@@ -84,7 +84,7 @@ function Dashboard() {
 
 						<li
 							onClick={() => {
-								alteraDashboard(false);
+								alteraHome(false);
 								alteraFaturamento(false);
 								alteraEstoque(false);
 								alteraPedidos(false);
