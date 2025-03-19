@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+
+    width: 80%;
   }
   
   .faturamento-container h1 {
