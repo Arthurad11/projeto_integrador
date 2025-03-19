@@ -4,7 +4,7 @@
     text-align: center;
     align-content: center;
 
-    border: 1px solid #ccc; 
+    border: 1px solid #f0f0f0; 
     border-radius: 10px;
 
     margin: 20px;
@@ -13,4 +13,8 @@
 
 }
 
+.item:hover{
+    border: 1px solid #cfcfcf;
+    transition: 0.5s;
+}
 
