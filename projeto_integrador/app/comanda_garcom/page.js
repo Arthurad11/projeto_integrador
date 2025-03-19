@@ -1,9 +1,9 @@
 "use client";
 
 
-
 import React, { useState } from "react";
 import "./garcom.css"; 
+
 
 function PainelGarcom() {
     const [mesaSelecionada, setMesaSelecionada] = useState(""); //  armazenar a mesa selecionada
@@ -15,7 +15,7 @@ function PainelGarcom() {
         { id: 3, status: "livre" },
         { id: 4, status: "ocupada" },
         { id: 5, status: "livre" },
-        { id: 6, status: "livre" },
+        { id: 6, status: "ocupada" },
 
     ];
 
