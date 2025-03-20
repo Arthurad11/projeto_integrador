@@ -20,8 +20,6 @@ function Home() {
       <main>
         <img src="/bardojao.png" alt="Imagem do Bar do João" />
       </main>
-
-      <Faturamento />
     </div>
   );
 }
