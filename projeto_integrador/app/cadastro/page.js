@@ -19,6 +19,9 @@ function Cadastro() {
                         <p>Senha:</p>
                         <input placeholder="Digite sua senha..." type="password"/> 
                         <br/><br/>
+                        <p>Login:</p>
+                        <input placeholder="Digite seu nome aqui..."/>
+                        <br/><br/>
                         <button className="botao">Cadastrar</button>
                         <br/><br/>
                         <button 
