@@ -57,7 +57,7 @@ function Dashboard() {
 								alteraClientes(false);
 								alteraFuncionarios(false);
 							}}>
-							Estoque
+							Produtos
 						</li>
 
 						<li
@@ -69,7 +69,7 @@ function Dashboard() {
 								alteraClientes(false);
 								alteraFuncionarios(false);
 							}}>
-							Pedidos
+							Vendas
 						</li>
 
 						<li

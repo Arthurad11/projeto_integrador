@@ -6,6 +6,7 @@ import Estoque from "./produtos/Estoque";
 import Clientes from "./clientes/Clientes";
 import Funcionarios from "./funcionarios/Funcionarios";
 import Faturamento from "./vendas/Faturamento";
+import Home from "../page";
 
 function Menu2() {
 	function toggleMenu() {
@@ -67,7 +68,7 @@ function Menu2() {
 								alteraClientes(false);
 								alteraFuncionarios(false);
 							}}>
-							Estoque
+							Produtos
 						</li>
 
 						<li
@@ -79,7 +80,7 @@ function Menu2() {
 								alteraClientes(false);
 								alteraFuncionarios(false);
 							}}>
-							Pedidos
+							Vendas
 						</li>
 
 						<li
@@ -114,13 +115,7 @@ function Menu2() {
 				</nav>
 			</header>
 			<main>
-				{/* {
-                    alteraDashboard == true && 
-
-                    
-                    
-
-                } */}
+				{home == true && <Home />}
 
 				{faturamento == true && <Faturamento />}
 
