@@ -11,4 +11,4 @@
 
 
   -- Ao entrar na página de produtos , listar todos produtos numa tabela 
-SELECT * FROM produtos;
+SELECT * FROM mesas;
