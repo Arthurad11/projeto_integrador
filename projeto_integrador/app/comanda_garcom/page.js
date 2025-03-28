@@ -4,8 +4,12 @@ import React, { useState } from "react";
 import "./garcom.css"; 
 
 function PainelGarcom() {
+<<<<<<< Updated upstream
     const [mesaSelecionada, setMesaSelecionada] = useState(""); // armazenar a mesa selecionada
     const [mesaComanda, setMesaComanda] = useState(""); // variável para armazenar a comanda
+=======
+    const [mesaSelecionada, setMesaSelecionada] = useState(""); // armazenamento a mesa selecionada
+>>>>>>> Stashed changes
 
     // Lista de mesas com status de "livre" ou "ocupada"
     const mesas = [
@@ -15,6 +19,7 @@ function PainelGarcom() {
         { id: 4, status: "ocupada" },
         { id: 5, status: "livre" },
         { id: 6, status: "ocupada" },
+<<<<<<< Updated upstream
         { id: 7, status: "livre" },
         { id: 8, status: "ocupada" },
         { id: 9, status: "livre" },
@@ -22,6 +27,12 @@ function PainelGarcom() {
     ];
 
     // Função para visualizar a comanda da mesa selecionada
+=======
+
+    ];
+
+    // Função para visualizar o pedido da mesa selecionada
+>>>>>>> Stashed changes
     const visualizarPedido = (mesa) => {
         setMesaComanda(mesa); // Define a comanda da mesa
         alert(`Visualizando pedido da Mesa ${mesa}`);
@@ -54,10 +65,17 @@ function PainelGarcom() {
                 </div>
                 
                 {/* Coluna de Mesas Ocupadas */}
+<<<<<<< Updated upstream
                 <div className="mesas_coluna2">
                     <h3>Mesas Ocupadas</h3>
                     {mesas.filter(mesa => mesa.status === "ocupada").map(mesa => (
                         <button key={mesa.id} className="mesa_ocupada" onClick={() => visualizarPedido(mesa.id)}>
+=======
+                <div className="mesas_coluna">
+                    <h3>Mesas Ocupadas</h3>
+                    {mesas.filter(mesa => mesa.status === "ocupada").map(mesa => (
+                        <button key={mesa.id} className="mesa_ocupado" onClick={() => visualizarPedido(mesa.id)}>
+>>>>>>> Stashed changes
                             Mesa {mesa.id} (Ocupada)
                         </button>
                     ))}
@@ -78,7 +96,11 @@ function PainelGarcom() {
                             Mesa {mesa.id}
                         </option>
                     ))}
+<<<<<<< Updated upstream
                 </select> <br/> <br/>
+=======
+                </select>
+>>>>>>> Stashed changes
                 <button className="buttonfinalizar" onClick={finalizarComanda}>
                     Finalizar Comanda
                 </button>

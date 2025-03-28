@@ -6,6 +6,7 @@ body {
 }
 
 .container {
+<<<<<<< Updated upstream
     text-align: center;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -14,6 +15,14 @@ body {
     max-width: 600px;
     margin: 20px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+=======
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #333;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+>>>>>>> Stashed changes
 }
 
 h1, h2, h3 {
@@ -24,6 +33,7 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+<<<<<<< Updated upstream
 }
 
 .mesas_coluna, .mesas_coluna2 {
@@ -41,6 +51,27 @@ h1, h2, h3 {
     padding: 10px;
     margin: 5px;
     border: none;
+=======
+}
+
+.mesas_coluna {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    width: 150px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #101014;
+    box-shadow: 3px 3px 6px #101014;
+    transition: transform 0.3s ease-in-out, background 0.3s;
+>>>>>>> Stashed changes
     cursor: pointer;
     border-radius: 5px;
 }
@@ -55,6 +86,7 @@ h1, h2, h3 {
     border-radius: 5px;
 }
 
+<<<<<<< Updated upstream
 .mesa_selecao {
     margin: 20px 0;
 }
@@ -65,7 +97,24 @@ h1, h2, h3 {
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: black;
+=======
+.mesa_livre {
+    background-color: #007bff;
+    width: 100px;
+    774
+}
+
+.mesa_ocupado {
+    background-color: #dc3545;
+    width: 100px;
+
+}
+
+.buttonexcluir {
+    background-color: red;
+>>>>>>> Stashed changes
     color: white;
+    margin-top: 10px;
 }
 
 .buttonfinalizar {
@@ -78,12 +127,31 @@ h1, h2, h3 {
     margin-left: 10px;
 }
 
+<<<<<<< Updated upstream
 .buttonfinalizar:hover {
     background-color: #0056b3;
+=======
+.bntselect {
+    border: 1px solid black;
+    padding: 5px;
+    width: 150px;
+    color: #ffffff;
+    background-color: #101014;
+    margin-bottom: 20px;
+}
+
+.mesa_selecao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+>>>>>>> Stashed changes
 }
 
 .button-container {
     margin-top: 20px;
+<<<<<<< Updated upstream
 }
 
 .buttonexcluir {
@@ -106,3 +174,6 @@ h1, h2, h3 {
     padding: 10px;
     border-radius: 5px;
 }
+=======
+}
+>>>>>>> Stashed changes
