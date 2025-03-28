@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import "./menu2.css";
-import Estoque from "./Estoque";
-import Clientes from "./Clientes";
-import Funcionarios from "./Funcionarios";
-import Faturamento from "./Faturamento";
+import Estoque from "./produtos/Estoque";
+import Clientes from "./clientes/Clientes";
+import Funcionarios from "./funcionarios/Funcionarios";
+import Faturamento from "./vendas/Faturamento";
 
 function Menu2() {
 	function toggleMenu() {

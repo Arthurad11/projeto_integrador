@@ -1,6 +1,6 @@
 import React from "react";
 import { Chart } from "react-google-charts";
-import Funcionarios from "./Funcionarios";
+import Funcionarios from "./funcionarios/Funcionarios";
 
 function Home() {
 	// Dados para o gráfico de faturamento mensal
@@ -52,7 +52,7 @@ function Home() {
 						<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
 					</div>
 
-                    <Funcionarios/>
+					<Funcionarios />
 				</div>
 			</div>
 		</div>
