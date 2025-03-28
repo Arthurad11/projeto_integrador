@@ -1,12 +1,13 @@
 "use client";
 
-import Clientes from "../components/Clientes";
-import Estoque from "../components/Estoque";
-import Funcionarios from "../components/Funcionarios";
+import Clientes from "../components/clientes/Clientes";
+import Estoque from "../components/produtos/Estoque";
+import Funcionarios from "../components/funcionarios/Funcionarios";
 import Menu2 from "../components/Menu2";
 import { useState } from "react";
 import "./dashboard.css";
-import Faturamento from "../components/Faturamento";
+import Faturamento from "../components/vendas/Faturamento";
+import Home from "../components/Home";
 
 function Dashboard() {
 	const [home, alteraHome] = useState();
@@ -103,13 +104,7 @@ function Dashboard() {
 					</ul>
 				</aside>
 				<main>
-					{/* {
-                    alteraDashboard == true && 
-
-                    
-                    
-
-                } */}
+					{home == true && <Home />}
 
 					{faturamento == true && <Faturamento />}
 

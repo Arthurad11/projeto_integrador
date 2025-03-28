@@ -1,3 +1,7 @@
+import React from "react";
+import { Chart } from "react-google-charts";
+import Funcionarios from "./funcionarios/Funcionarios";
+
 function Home() {
 	// Dados para o gráfico de faturamento mensal
 	const graficoFaturamentoMensalData = [
@@ -9,11 +13,12 @@ function Home() {
 	];
 
 	// Dados para o gráfico de faturamento anual
-	const graficoFaturamentoAnualData = [
-		["Ano", "Entrada", "Saída", "Lucro"],
-		["2021", 4000, 2000, 2000],
-		["2022", 5000, 2500, 2500],
-		["2023", 6000, 3000, 3000],
+	const graficoVendasMensalData = [
+		["Mês", "Vendas Realizadas"],
+		["Jan", 800],
+		["Fev", 900],
+		["Mar", 700],
+		["Abr", 1000],
 	];
 
 	const options = {
@@ -31,20 +36,23 @@ function Home() {
 	};
 	return (
 		<div>
-			<h1>Gráficos de Desempenho Financeiro e Vendas</h1>
+			<h1>Resumo</h1>
+			<div>
+				{/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
+				<div className="chart-row">
+					{/* Gráfico de faturamento mensal */}
+					<div className="chart-container">
+						<h3>Gráfico de Faturamento Mensal</h3>
+						<Chart chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
+					</div>
 
-			{/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
-			<div className="chart-row">
-				{/* Gráfico de faturamento mensal */}
-				<div className="chart-container">
-					<h3>Gráfico de Faturamento Mensal</h3>
-					<Chart chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
-				</div>
+					{/* Gráfico de vendas mensal */}
+					<div className="chart-container">
+						<h3>Gráfico de Vendas Mensal</h3>
+						<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
+					</div>
 
-				{/* Gráfico de vendas mensal */}
-				<div className="chart-container">
-					<h3>Gráfico de Vendas Mensal</h3>
-					<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
+					<Funcionarios />
 				</div>
 			</div>
 		</div>
