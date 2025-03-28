@@ -36,19 +36,11 @@ function Comanda() {
     return (
         <div className="container">
             <div className="body">
-                <h1>🍺 Bem-vindo ao Boteco do João </h1>
+                <h1>🍺 Bem-vindo ao Boteco do João🍺 </h1>
+                <br/>
 
                 <h2>Pedido - Mesa {mesaId}</h2>
-
-                <h3>✨ Promoção do Dia ✨</h3>
-                <div className="item">
-                    <input 
-                        type="checkbox" 
-                        checked={!!selecionados[1]} 
-                        onChange={(e) => calcularTotal(45, e.target.checked, 1)} 
-                    />
-                    Combo 3 - R$ 45,00
-                </div>
+                <br/>
 
                 <h3>Bebidas</h3>
                 <div className="item">
@@ -87,17 +79,9 @@ function Comanda() {
 
                 <br/><br/>
 
-                <div className="button-container">
-                    {/* Botão para adicionar um produto */}
-                    <button className="button" onClick={adicionarProduto}>
-                        Adicionar Produto
-                    </button>
+               
 
-                    {/* Botão para resetar a comanda */}
-                    <button className="button buttonexcluir" onClick={resetarComanda}>
-                        Excluir
-                    </button>
-                </div>
+                   
             </div>
         </div>
     );
