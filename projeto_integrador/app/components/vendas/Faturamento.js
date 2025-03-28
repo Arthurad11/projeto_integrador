@@ -53,6 +53,8 @@ function Faturamento() {
   };
 
   return (
+    
+      
     <div className="faturamento-container">
       <h1>Gráficos de Desempenho Financeiro e Vendas</h1>
 
