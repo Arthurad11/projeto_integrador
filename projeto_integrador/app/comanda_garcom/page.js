@@ -86,7 +86,7 @@ function PainelGarcom() {
 
             {/* Botão para Excluir Comanda */}
             <div className="button-container">
-                <button className="buttonexcluir" onClick={() => alert("Comanda excluída!")}>Excluir</button>
+                <button className="buttonexcluir" onClick={() => alert("Comanda excluída!")}>Adicionar Produto</button>
             </div>
         </div>
     );

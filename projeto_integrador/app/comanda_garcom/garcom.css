@@ -43,6 +43,8 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .mesa_ocupada {
@@ -53,6 +55,8 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .mesa_selecao {
