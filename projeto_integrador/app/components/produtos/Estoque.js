@@ -1,74 +1,74 @@
-import './estoque.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+'use client'
 
+import axios from "axios";
+import "./estoque.css";
+import { useEffect, useState } from "react";
 
 function Estoque() {
-    
-    return ( 
+	const [produtos, alteraProdutos] = useState([]);
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Categoria</th>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th className='remover'>Remover</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Cerveja</td>
-                    <td>Skol</td>
-                    <td>R$ 4,00</td>
-                    <td className='botaoremover'>
-                    <button className='botaolixeira'>
-                        
-                    </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Cerveja</td>
-                    <td>Império</td>
-                    <td>R$ 5,00</td>
-                    <td className='botaoremover'>
-                    <button className='botaolixeira'>
-                        
-                    </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Destilados</td>
-                    <td>Red Label</td>
-                    <td>R$ 90,00</td>
-                    <td className='botaoremover'>
-                    <button className='botaolixeira'>
-                        
-                    </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Destilados</td>
-                    <td>Tanqueray</td>
-                    <td>R$ 100,00</td>
-                    <td className='botaoremover'>
-                    <button className='botaolixeira'>
-                        
-                    </button>
-                    </td>
-                </tr>
-              
-            </tbody>
+	async function buscaTodosProdutos() {
+		const response = await axios.get("http://localhost:3000/api/produtos");
+		alteraProdutos(response.data);
+	}
+
+    const [pesquisa, alteraPesquisa] = useState("");
+
+    async function buscaPorId( id ) {
+		const response = await axios.get("http://localhost:3000/api/produtos/"+id)
+		alteraProdutos( response.data )
+	}
 
 
-        </table>
+	useEffect(() => {
+		buscaTodosProdutos();
+	}, []);
 
+	return (
+		<div>
 
-     );
+            <h1>Produtos</h1>
+            <hr/>
+
+            <div>
+                <p>Pesquisar produto:</p>
+                <input type="text" onChange={ (e)=> alteraPesquisa(e.target.value)}/> 
+                <button onClick={ ()=> buscaPorId(pesquisa)}>Pesquisar</button>
+            </div>
+
+            <br/>
+            <hr/>
+
+			<table>
+				<thead>
+					<tr >
+						<th>ID</th>
+						<th>Categoria</th>
+						<th>Produto</th>
+						<th>Preço</th>
+						<th className="remover">
+							Ferramentas / <button>Adicionar novo produto</button>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					{produtos.map((i) => (
+						<tr key={i.id}>
+							<td>{i.id}</td>
+							<td>{i.id_categoria}</td>
+							<td>{i.nome}</td>
+							<td>R$ {i.preco.toFixed(2)}</td>
+							<td>
+								<button onClick={() => redirect("/produto/" + i.id)}>Ver</button>
+								<button onClick={() => montaEdicao(i)}>Editar</button>
+								<button onClick={() => removeProdutos(i.id)}>Remover</button>
+							</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	);
 }
 
 export default Estoque;
