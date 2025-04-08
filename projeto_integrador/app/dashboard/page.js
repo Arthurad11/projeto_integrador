@@ -98,7 +98,7 @@ function Dashboard() {
 
 						<li>
 							<button className="deslogar">
-								<img width="12px" src="https://cdn-icons-png.flaticon.com/512/4043/4043198.png" /> Sair da Conta
+								<img className="imagemSair" src="https://cdn-icons-png.flaticon.com/512/4043/4043198.png" /> Sair da Conta
 							</button>
 						</li>
 					</ul>

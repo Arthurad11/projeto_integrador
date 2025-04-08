@@ -1,18 +1,4 @@
-table {
-    width: 100px;
-    border-collapse: collapse;
-    margin: 20px ;
-    border: 2px solid black;
-}
-th, td {
 
-    border: 1px solid black;
-    padding: 20px;
-    text-align: center;
-}
-th {
-    background-color: #f2f2f2;
-}
 
 .botaolixeira{
     background-color: transparent;
