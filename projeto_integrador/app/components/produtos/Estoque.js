@@ -24,7 +24,7 @@ function Estoque() {
                     <td>R$ 4,00</td>
                     <td className='botaoremover'>
                     <button className='botaolixeira'>
-                        <img width={20} src='iconelixeira.png'/>
+                        
                     </button>
                     </td>
                 </tr>
@@ -35,7 +35,7 @@ function Estoque() {
                     <td>R$ 5,00</td>
                     <td className='botaoremover'>
                     <button className='botaolixeira'>
-                        <img width={20} src='iconelixeira.png'/>
+                        
                     </button>
                     </td>
                 </tr>
@@ -46,7 +46,7 @@ function Estoque() {
                     <td>R$ 90,00</td>
                     <td className='botaoremover'>
                     <button className='botaolixeira'>
-                        <img width={20} src='iconelixeira.png'/>
+                        
                     </button>
                     </td>
                 </tr>
@@ -57,7 +57,7 @@ function Estoque() {
                     <td>R$ 100,00</td>
                     <td className='botaoremover'>
                     <button className='botaolixeira'>
-                        <img width={20} src='iconelixeira.png'/>
+                        
                     </button>
                     </td>
                 </tr>
