@@ -32,7 +32,7 @@ function Estoque() {
 
             <div>
                 <p>Pesquisar produto:</p>
-                <input type="text" onChange={ (e)=> alteraPesquisa(e.target.value)}/> 
+                <input type="text" placeholder="Digite o nome ou ID" onChange={ (e)=> alteraPesquisa(e.target.value)}/> 
                 <button onClick={ ()=> buscaPorId(pesquisa)}>Pesquisar</button>
             </div>
 

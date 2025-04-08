@@ -3,7 +3,7 @@ import conexao from "@/app/lib/conexao";
 export async function GET( request, { params } ){
     const id = (await params).id;
 
-    const query = `SELECT * FROM produtos WHERE id = ? OR nome LIKE ?;`;
+    const query = `SELECT * FROM produtos WHERE id = ? OR nome LIKE ?`;
     const nomePesquisa = `%${id}%`;
 
     const [results] = await conexao.execute(
