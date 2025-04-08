@@ -9,7 +9,6 @@ import "./dashboard.css";
 import Faturamento from "../components/vendas/Faturamento";
 import Home from "../components/Home";
 
-
 function Dashboard() {
 	const [home, alteraHome] = useState();
 	const [faturamento, alteraFaturamento] = useState();
@@ -18,7 +17,6 @@ function Dashboard() {
 	const [clientes, alteraClientes] = useState();
 	const [funcionarios, alteraFuncionarios] = useState();
 
-<<<<<<< Updated upstream
 	return (
 		<div>
 			<Menu2 />
@@ -37,16 +35,6 @@ function Dashboard() {
 							className="first">
 							Home
 						</li>
-=======
-    const[dashboard , alteraDashboard] = useState(true)
-    const[faturamento , alteraFaturamento] = useState(true)
-    const[estoque, alteraEstoque] = useState(true)
-    const[pedidos, alteraPedidos] = useState(true)
-    const[clientes, alteraClientes] = useState(true)
-    const[funcionarios, alterafuncionarios] = useState(true)
-
-
->>>>>>> Stashed changes
 
 						<li
 							onClick={() => {
@@ -60,7 +48,6 @@ function Dashboard() {
 							Faturamento
 						</li>
 
-<<<<<<< Updated upstream
 						<li
 							onClick={() => {
 								alteraHome(false);
@@ -72,25 +59,6 @@ function Dashboard() {
 							}}>
 							Produtos
 						</li>
-=======
-    return ( 
-        <div>
-            <Menu />
-            <aside>
-                <ul>
-                    <li onClick={()=> {}} className="first" >Dashboard</li>
-                    <li onClick={()=> {}}>Faturamento</li>
-                    <li onClick={()=> {}}>Estoque</li>
-                    <li onClick={()=> {}}>Pedidos</li>
-                    <li onClick={()=> {}}>Clientes</li>
-                    <li onClick={()=> {}}>Funcionários</li>
-                    <li><button className="deslogar"><img width="12px" src="https://cdn-icons-png.flaticon.com/512/4043/4043198.png"/> Sair da Conta</button></li>
-                </ul>
-            </aside>
-            <main>
-                {
-                
->>>>>>> Stashed changes
 
 						<li
 							onClick={() => {
