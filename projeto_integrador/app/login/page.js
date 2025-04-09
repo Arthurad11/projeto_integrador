@@ -94,14 +94,14 @@ function Login() {
 						<label>
 							Email <br />
 						</label>
-						<input type="email" placeholder="Usuário" required onChange={ (e)=> setEmail(e.target.value)}/>
+						<input type="email" placeholder="Email" required onChange={ (e)=> setEmail(e.target.value)}/>
 
 						<br />
 
 						<label>
 							Confirme seu Email <br />
 						</label>
-						<input type="email" placeholder="Usuário" required onChange={ (e)=> setConfirmaEmail(e.target.value)}/>
+						<input type="email" placeholder="Email" required onChange={ (e)=> setConfirmaEmail(e.target.value)}/>
 
 						<br />
 						<br />
