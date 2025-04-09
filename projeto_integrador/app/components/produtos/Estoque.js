@@ -3,11 +3,15 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-import axios from "axios";
 import "./estoque.css";
+
+import axios from "axios";
 import { useEffect, useState } from "react";
+import { redirect } from 'next/navigation';
 
 function Estoque() {
+
+	//Mostra de produtos
 	const [produtos, alteraProdutos] = useState([]);
 
 	async function buscaTodosProdutos() {
@@ -15,12 +19,17 @@ function Estoque() {
 		alteraProdutos(response.data);
 	}
 
+
+	//Pesquisa de produtos, seja por ID ou Nome
     const [pesquisa, alteraPesquisa] = useState("");
 
     async function buscaPorId( id ) {
 		const response = await axios.get("http://localhost:3000/api/produtos/"+id)
 		alteraProdutos( response.data )
 	}
+	//
+
+	
 
 
 	useEffect(() => {
@@ -50,7 +59,7 @@ function Estoque() {
 						<th>Produto</th>
 						<th>Preço</th>
 						<th className="remover">
-							Ferramentas / <button>Adicionar novo produto</button>
+							Ferramentas / <button onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
 						</th>
 					</tr>
 				</thead>

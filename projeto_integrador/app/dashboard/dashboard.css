@@ -91,7 +91,7 @@ img{
     display: flex;
     flex-direction: row;
     text-align: center;
-    align-items: center;
+    justify-content: center;
 }
 
 main{
