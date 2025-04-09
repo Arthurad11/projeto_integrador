@@ -7,10 +7,11 @@ import Clientes from "../components/clientes/Clientes";
 import Estoque from "../components/produtos/Estoque";
 import Funcionarios from "../components/funcionarios/Funcionarios";
 import Menu2 from "../components/Menu2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./dashboard.css";
 import Faturamento from "../components/vendas/Faturamento";
 import Home from "../components/Home";
+import { redirect } from 'next/dist/server/api-utils';
 
 function Dashboard() {
 	const [home, alteraHome] = useState();

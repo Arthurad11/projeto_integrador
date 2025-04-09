@@ -29,6 +29,12 @@ function Estoque() {
 	}
 	//
 
+	//Remover produtos
+	async function removeProdutos(id) {
+		await axios.delete("http://localhost:3000/api/produtos/"+id)
+		buscaTodosProdutos()
+	}
+
 	
 
 
@@ -67,13 +73,22 @@ function Estoque() {
 					{produtos.map((i) => (
 						<tr key={i.id}>
 							<td>{i.id}</td>
-							<td>{i.id_categoria}</td>
+							<td>
+							{ 
+								i.id_categoria === "1" ? "Cerveja" :
+								i.id_categoria === "2" ? "Chopp" :
+								i.id_categoria === "3" ? "Drinks" :
+								i.id_categoria === "4" ? "Sucos" :
+								i.id_categoria === "5" ? "Refrigerantes" :
+								i.id_categoria === "6" ? "Bebidas em geral" : "Categoria Desconhecida"
+							}
+							</td>
 							<td>{i.nome}</td>
 							<td>R$ {i.preco.toFixed(2)}</td>
 							<td>
-								<button onClick={() => redirect("/produto/" + i.id)}><FontAwesomeIcon icon={faEye} /></button>
-								<button onClick={() => montaEdicao(i)}><FontAwesomeIcon icon={faPenToSquare} /></button>
-								<button onClick={() => removeProdutos(i.id)}><FontAwesomeIcon icon={faTrashCan} /></button>
+								<button onClick={ () => redirect("/produto/" + i.id)}><FontAwesomeIcon icon={faEye} /></button>
+								<button onClick={ () => montaEdicao(i)}><FontAwesomeIcon icon={faPenToSquare} /></button>
+								<button onClick={ () => removeProdutos(i.id)}><FontAwesomeIcon icon={faTrashCan} /></button>
 							</td>
 						</tr>
 					))}
