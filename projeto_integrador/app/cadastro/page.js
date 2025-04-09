@@ -1,11 +1,29 @@
 "use client"
 
+import axios from 'axios';
 import './cadfunc.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function Cadastro() {
     const [cadastrarFunc, setCadastro] = useState(true);
     const [alteraCadastro, setAlteraCadastro] = useState(false);
+
+    const [cadastrafunc, alteraCadastraFunc] = useState("")
+
+    const []
+
+    async function cadastroFuncionario(){
+
+        const obj = {
+            nome: nome
+        }
+
+        const response = await axios.post("http://localhost:3000/api/cadastro/")
+		alteraCadastraFunc( response.data )
+
+    }
+
+
 
     return ( 
         <div>
@@ -15,14 +33,16 @@ function Cadastro() {
                     <form action="" method="">
                         <h1 className="titulo">Cadastro de Funcionário</h1>
                         <p>Nome Completo:</p>
-                        <input placeholder="Digite seu nome aqui..."/>
+                        <input placeholder="Digite seu nome aqui..." onChange={(e)=> setNome(e.target.value
+
+                        )}/>
+                        <p>Email:</p>
+                        <input placeholder="Digite seu email..." /> 
+                        <br/><br/>
                         <p>Senha:</p>
-                        <input placeholder="Digite sua senha..." type="password"/> 
+                        <input placeholder="Digite sua senha aqui..." type="password"/>
                         <br/><br/>
-                        <p>Login:</p>
-                        <input placeholder="Digite seu nome aqui..."/>
-                        <br/><br/>
-                        <button className="botao">Cadastrar</button>
+                        <button className="botao" onClick={(e)=> cadastroFuncionario(e)}>Cadastrar</button>
                         <br/><br/>
                         <button 
                             className="botaoAlterar"  
