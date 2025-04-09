@@ -1,5 +1,3 @@
-
-
 .botaolixeira{
     background-color: transparent;
     border: none;
@@ -15,4 +13,8 @@
 .remover{
     text-align: center;
     align-items: center;
+}
+
+th{
+    background-color: white !important;
 }

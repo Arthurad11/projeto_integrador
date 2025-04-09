@@ -1,5 +1,8 @@
 'use client'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+
 import axios from "axios";
 import "./estoque.css";
 import { useEffect, useState } from "react";
@@ -59,9 +62,9 @@ function Estoque() {
 							<td>{i.nome}</td>
 							<td>R$ {i.preco.toFixed(2)}</td>
 							<td>
-								<button onClick={() => redirect("/produto/" + i.id)}>Ver</button>
-								<button onClick={() => montaEdicao(i)}>Editar</button>
-								<button onClick={() => removeProdutos(i.id)}>Remover</button>
+								<button onClick={() => redirect("/produto/" + i.id)}><FontAwesomeIcon icon={faEye} /></button>
+								<button onClick={() => montaEdicao(i)}><FontAwesomeIcon icon={faPenToSquare} /></button>
+								<button onClick={() => removeProdutos(i.id)}><FontAwesomeIcon icon={faTrashCan} /></button>
 							</td>
 						</tr>
 					))}
