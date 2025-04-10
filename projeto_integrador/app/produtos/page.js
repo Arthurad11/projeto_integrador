@@ -19,7 +19,6 @@ function Produtos() {
 
 				<div className="item-container">
 					<Produto nome="" preco=""/>
-					
 				</div>
 
 				<br />
@@ -29,10 +28,7 @@ function Produtos() {
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 				<br />
 				<br />
@@ -41,60 +37,42 @@ function Produtos() {
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 
 				<h2>Sucos</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 
 				<h2>Refrigerantes</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 
 				<h2>Bebidas em Geral</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 
 				<h2>Espetinhos</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 
 				<h2>Porções</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto />
-					<Produto />
-					<Produto />
-					<Produto />
+					<Produto nome="" preco=""/>
 				</div>
 			</div>
 
