@@ -5,7 +5,7 @@ import "./menu2.css";
 import Estoque from "./produtos/Estoque";
 import Clientes from "./clientes/Clientes";
 import Funcionarios from "./funcionarios/Funcionarios";
-import Faturamento from "./vendas/Faturamento";
+import Faturamento from "./faturamento/Faturamento";
 import Home from "../page";
 
 function Menu2() {
