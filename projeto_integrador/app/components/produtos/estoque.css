@@ -49,8 +49,19 @@
     align-items: center;
   }
 
-  .cabecalho{
+  /* .cabecalho{
     border: 1px solid #000000 !important;
     background-color: #636363;
+  } */
+  
+  /* .tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+   */
+  .tabela th,
+  .tabela td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
   }
   

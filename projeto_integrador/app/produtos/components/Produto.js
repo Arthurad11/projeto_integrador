@@ -4,10 +4,10 @@ function Produto(attr) {
 	return (
 		<div>
 			<div className="item">
-				<h3>Nome Produto</h3>
+				<h3>{attr.nome}</h3>
                 <img src="https://placehold.co/70"/>
                 <br/>
-				<p>Preço</p>
+				<p>{attr.preco}</p>
 				<button>Comprar</button>
 			</div>
 		</div>

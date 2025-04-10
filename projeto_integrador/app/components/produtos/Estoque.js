@@ -51,6 +51,7 @@ function Estoque() {
 
 				<br/>
 				<hr />
+				<br/>
 				
 
 				<div className="scroll-tabela">

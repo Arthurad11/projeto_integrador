@@ -41,37 +41,42 @@ function Funcionarios() {
     },[])
 
     return ( 
-        <div>
-            <table>
+        <div className="container-tabela">
+			<div className="funcionarios">
+				<h1>Funcionários</h1>
+				<hr />
+
+				<br/>
+
+				<div className="scroll-tabela">
+					<table className="tabela">
 						<thead>
 							<tr>
-								<td>ID</td>
-								<td>Nome</td>
-								<td>Email</td>						
-								<td>Registro</td>
+								<th>ID</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>Registro</th>
+								<th>Ações</th>
 							</tr>
 						</thead>
 						<tbody>
-							{
-								clientes.map( i=>
-									<tr key={i.id}>
-										<td>{i.id}</td>
-										<td>{i.nome}</td>
-										<td>{i.email}</td>
-										<td>{ formataData(i.registro) }</td>
-										<td>
-											<button onClick={()=> montaEdicao(i)} >Editar</button>
-											<button onClick={()=> removeProduto(i.id)}>Remover</button>
-										</td>
-									</tr>
-
-								)
-							}
+							{clientes.map((i) => (
+								<tr key={i.id}>
+									<td>{i.id}</td>
+									<td>{i.nome}</td>
+									<td>{i.email}</td>
+									<td>{formataData(i.registro)}</td>
+									<td className="ferramentas">
+										<button onClick={() => montaEdicao(i)}>Editar</button>
+										<button onClick={() => removeProduto(i.id)}>Remover</button>
+									</td>
+								</tr>
+							))}
 						</tbody>
-
 					</table>
-
-        </div>
+				</div>
+			</div>
+		</div>
 
      );
 }

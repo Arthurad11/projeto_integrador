@@ -2,10 +2,9 @@
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    height: 1000px;
   }
   
-  .funcionarios {
+  .vendas {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -33,10 +32,8 @@
   }
   
   /* Estilo das células */
-  .tabela th,
-  .tabela td {
+  .tabela th, .tabela td {
     padding: 10px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #cacaca;
   }
-
