@@ -1,14 +1,95 @@
-html, body {
+body {
     margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Impede a rolagem */
+    background-color: #000000;
+    color: #F5F5DC; /* bege claro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-img {
-    width: 100%;
-    height: 100vh; /* Garante que a imagem ocupe toda a tela */
-    /* Ajusta a imagem para cobrir a tela sem distorção */
+.container {
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #F5F5DC;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin: 40px ;
     
+}
+
+/* Animação Uiverse estilosa */
+.card-uiverse {
+    background: linear-gradient(145deg, #1c1c1c, #2c2c2c);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    transition: all 0.3s ease-in-out;
+    animation: fadeInUp 1s ease;
+}
+
+.card-uiverse:hover {
+    transform: scale(1.05);
+}
+
+.card-uiverse h2 {
+    color: #F5F5DC;
+    margin-bottom: 15px;
+}
+
+.card-uiverse p {
+    color: #d3cfc4;
+    font-size: 1rem;
+}
+
+.beer-icon img {
+    width: 80px;
+    animation: bounce 2s infinite;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
