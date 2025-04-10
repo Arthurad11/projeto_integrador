@@ -1,6 +1,5 @@
 "use client";
-import "./page.css"
-import Head from "next/head";
+import "./page.css";
 import { useEffect } from "react";
 import Menu from "./components/Menu";
 
@@ -10,16 +9,27 @@ function Home() {
   }, []);
 
   return (
-
-    
-    <div>
+    <div className="container">
       <Menu />
-      <Head>
-        <title>Bar do João</title>
-      </Head>
-      <main>
-        <img src="/bardojao.png" alt="Imagem do Bar do João" />
-      </main>
+
+      <header className="header">
+        <img className="logo" src="/img/logo.png" alt="Logo do Bar do João" />
+        <h1> Bar do João </h1>
+      </header>
+
+      <section className="hero">
+        <div className="card-uiverse">
+          <div className="beer-icon">
+            <img src="/img/caneca.png" alt="Caneca de cerveja" />
+          </div>
+          <h2>Bem-vindo ao bar mais animado da cidade!</h2>
+          <p>Gerencie comandas, pedidos e estoque com estilo.</p>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>© 2025 Bar do João. Todos os direitos reservados.</p>
+      </footer>
     </div>
   );
 }
