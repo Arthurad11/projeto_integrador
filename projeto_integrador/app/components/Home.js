@@ -41,9 +41,13 @@ function Home() {
 				{/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
 				<div className="chart-row">
 					{/* Gráfico de faturamento mensal */}
-					<div className="chart-container">
+					<div className= "chart-container" >
+
 						<h3>Gráfico de Faturamento Mensal</h3>
-						<Chart chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
+						<Chart   chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
+
+					
+
 					</div>
 
 					{/* Gráfico de vendas mensal */}

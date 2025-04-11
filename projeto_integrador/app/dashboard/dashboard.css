@@ -91,13 +91,22 @@ img{
     display: flex;
     flex-direction: row;
     text-align: center;
+<<<<<<< Updated upstream
     justify-content: center;
+=======
+    align-items: center;
+    ;
+>>>>>>> Stashed changes
 }
 
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+<<<<<<< Updated upstream
+=======
+    align-items: center;
+>>>>>>> Stashed changes
     
 
     width: 100%;
