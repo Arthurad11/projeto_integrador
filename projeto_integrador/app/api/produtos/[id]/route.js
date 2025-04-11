@@ -19,3 +19,20 @@ export async function GET( request, { params } ){
         }
     )
 }
+
+export async function DELETE( request, { params } ){
+    
+    const id = (await params).id;
+
+    const query = `DELETE FROM produtos WHERE id = ?`;
+    const [results] = await conexao.execute( query, [id] )
+
+    return new Response(
+        JSON.stringify(results),
+        {
+            status: 200,
+            headers: { "Content-Type": "application/json" }
+        }
+    )
+
+}

@@ -1,20 +1,67 @@
-.botaolixeira{
+.container-tabela {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .produtos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .scroll-tabela {
+    max-height: 1000px;
+    overflow-y: auto;
+    
+  }
+  
+  .tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabela-produtos th, .tabela-produtos td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tabela-produtos thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  .remover {
+    text-align: center;
+  }
+  
+  .botaoremover {
+    padding: 10px;
+  }
+  
+  .botaolixeira {
     background-color: transparent;
     border: none;
     text-align: center;
     align-items: center;
-}
+  }
 
-.botaoremover{
+  /* .cabecalho{
+    border: 1px solid #000000 !important;
+    background-color: #636363;
+  } */
+  
+  /* .tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+   */
+  .tabela th,
+  .tabela td {
     padding: 10px;
-}
-
-
-.remover{
-    text-align: center;
-    align-items: center;
-}
-
-th{
-    background-color: white !important;
-}
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  

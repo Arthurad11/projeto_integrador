@@ -1,16 +1,18 @@
 "use client";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRocket } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRocket } from "@fortawesome/free-solid-svg-icons";
 
 import Clientes from "../components/clientes/Clientes";
 import Estoque from "../components/produtos/Estoque";
 import Funcionarios from "../components/funcionarios/Funcionarios";
 import Menu2 from "../components/Menu2";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./dashboard.css";
-import Faturamento from "../components/vendas/Faturamento";
+import Faturamento from "../components/faturamento/Faturamento";
 import Home from "../components/Home";
+import { redirect } from "next/dist/server/api-utils";
+import Vendas from "../components/vendas/Vendas";
 
 function Dashboard() {
 	const [home, alteraHome] = useState();
@@ -113,7 +115,7 @@ function Dashboard() {
 
 					{estoque == true && <Estoque />}
 
-					{}
+					{pedidos == true && <Vendas />}
 
 					{clientes == true && <Clientes />}
 

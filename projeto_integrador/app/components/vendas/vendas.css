@@ -1,0 +1,39 @@
+.container-tabela {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .vendas {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Wrapper com rolagem */
+  .scroll-tabela {
+    max-height: 1000px;
+    overflow-y: auto;
+    
+  }
+  
+  /* Tabela base */
+  .tabela {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Cabeçalho fixo */
+  .tabela thead th {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+  
+  /* Estilo das células */
+  .tabela th, .tabela td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #cacaca;
+  }

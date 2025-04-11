@@ -45,55 +45,48 @@ function Clientes() {
     },[])
 
     return ( 
-        <div>
+        <div className="container-tabela">
+			<div className="clientes">
+				<h1>Clientes</h1>
+				<hr />
+				<p>Busca de clientes:</p>
+				<input placeholder="Digite o nome ou ID" onChange={(e) => alteraPesquisa(e.target.value)} />
+				<button onClick={() => buscaPorID(pesquisa)}>Pesquisar</button>
 
-            <h1>Clientes</h1>
-            <hr/>
-            <p>Busca de clientes:</p>
-			<input placeholder="Digite o nome ou ID" onChange={(e)=> alteraPesquisa(e.target.value)} />
-			<button onClick={()=> buscaPorID(pesquisa)} >Pesquisar</button> 
-            <br/>
-            <br/>
-            <br/>
+				<br />
+				<br />
+				<hr />
+				<br />
 
-          
-            <hr/>
-
-            <br/>
-           
-
-            <table>
+				<div className="scroll-tabela">
+					<table className="tabela">
 						<thead>
 							<tr>
-								<td>ID</td>
-								<td>Nome</td>
-								<td>Email</td>
-								<td>Registro</td>
+								<th>ID</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>Registro</th>
+								<th>Ações</th>
 							</tr>
 						</thead>
 						<tbody>
-							{
-								clientes.map( (i)=>
-									<tr key={i.id}>
-										<td>{i.id}</td>
-										<td>{i.nome}</td>
-										<td>{i.email}</td>
-										<td>{ formataData(i.registro) }</td>
-										<td>
-											<button className="botaoEditRemov" onClick={()=> montaEdicao(i)} >Editar</button>
-											<button className="botaoEditRemov" onClick={()=> removeProduto(i.id)}>Remover</button>
-										</td>
-									</tr>
-
-								)
-							}
+							{clientes.map((i) => (
+								<tr key={i.id}>
+									<td>{i.id}</td>
+									<td>{i.nome}</td>
+									<td>{i.email}</td>
+									<td>{formataData(i.registro)}</td>
+									<td>
+										<button className="botaoEditRemov" onClick={() => montaEdicao(i)}>Editar</button>
+										<button className="botaoEditRemov" onClick={() => removeProduto(i.id)}>Remover</button>
+									</td>
+								</tr>
+							))}
 						</tbody>
-
 					</table>
-
-
-        </div>
-
+				</div>
+			</div>
+		</div>
      );
 }
 

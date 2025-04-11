@@ -1,13 +1,16 @@
-'use client'
+"use client";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faPenToSquare, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+
+import "./estoque.css";
 
 import axios from "axios";
-import "./estoque.css";
 import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
 
 function Estoque() {
+	//Mostra de produtos
 	const [produtos, alteraProdutos] = useState([]);
 
 	async function buscaTodosProdutos() {
@@ -15,61 +18,101 @@ function Estoque() {
 		alteraProdutos(response.data);
 	}
 
-    const [pesquisa, alteraPesquisa] = useState("");
+	//Pesquisa de produtos, seja por ID ou Nome
+	const [pesquisa, alteraPesquisa] = useState("");
 
-    async function buscaPorId( id ) {
-		const response = await axios.get("http://localhost:3000/api/produtos/"+id)
-		alteraProdutos( response.data )
+	async function buscaPorId(id) {
+		const response = await axios.get("http://localhost:3000/api/produtos/" + id);
+		alteraProdutos(response.data);
 	}
+	//
 
+	//Remover produtos
+	async function removeProdutos(id) {
+		await axios.delete("http://localhost:3000/api/produtos/" + id);
+		buscaTodosProdutos();
+	}
 
 	useEffect(() => {
 		buscaTodosProdutos();
 	}, []);
 
 	return (
-		<div>
+		<div className="container-tabela">
+			<div className="produtos">
+				<h1>Produtos</h1>
+				<hr />
 
-            <h1>Produtos</h1>
-            <hr/>
+				<div>
+					<p>Pesquisar produto:</p>
+					<input type="text" placeholder="Digite o nome ou ID" onChange={(e) => alteraPesquisa(e.target.value)} />
+					<button onClick={() => buscaPorId(pesquisa)}>Pesquisar</button>
+				</div>
 
-            <div>
-                <p>Pesquisar produto:</p>
-                <input type="text" placeholder="Digite o nome ou ID" onChange={ (e)=> alteraPesquisa(e.target.value)}/> 
-                <button onClick={ ()=> buscaPorId(pesquisa)}>Pesquisar</button>
-            </div>
+				<br/>
+				<hr />
+				<br/>
+				
 
-            <br/>
-            <hr/>
+				<div className="scroll-tabela">
+					<table className="tabela-produtos">
+						<thead className="cabecalho">
+							<tr className="cabecalho">
+								<th>ID</th>
+								<th>Categoria</th>
+								<th>Produto</th>
+								<th>Preço</th>
+								<th className="ferramentas">
+									Ferramentas / <button onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							{produtos.map((i) => (
+								<tr key={i.id}>
+									<td>{i.id}</td>
+									<td>
+										{i.id_categoria === "1"
+											? "Cerveja"
+											: i.id_categoria === "2"
+											? "Chopp"
+											: i.id_categoria === "3"
+											? "Drinks"
+											: i.id_categoria === "4"
+											? "Sucos"
+											: i.id_categoria === "5"
+											? "Refrigerantes"
+											: i.id_categoria === "6"
+											? "Bebidas em geral"
+											: i.id_categoria === "7"
+											? "Porções"
+											: i.id_categoria === "8"
+											? "Espetinhos"
+											: "Cat. Desconhecida"}
+									</td>
+									<td>{i.nome}</td>
+									<td>R$ {i.preco.toFixed(2)}</td>
+									<td>
+										<button onClick={() => redirect("/produto/" + i.id)}>
+											<FontAwesomeIcon icon={faEye} />
+										</button>
+										<button onClick={() => montaEdicao(i)}>
+											<FontAwesomeIcon icon={faPenToSquare} />
+										</button>
+										<button onClick={() => removeProdutos(i.id)}>
+											<FontAwesomeIcon icon={faTrashCan} />
+										</button>
+									</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
 
-			<table>
-				<thead>
-					<tr >
-						<th>ID</th>
-						<th>Categoria</th>
-						<th>Produto</th>
-						<th>Preço</th>
-						<th className="remover">
-							Ferramentas / <button>Adicionar novo produto</button>
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{produtos.map((i) => (
-						<tr key={i.id}>
-							<td>{i.id}</td>
-							<td>{i.id_categoria}</td>
-							<td>{i.nome}</td>
-							<td>R$ {i.preco.toFixed(2)}</td>
-							<td>
-								<button onClick={() => redirect("/produto/" + i.id)}><FontAwesomeIcon icon={faEye} /></button>
-								<button onClick={() => montaEdicao(i)}><FontAwesomeIcon icon={faPenToSquare} /></button>
-								<button onClick={() => removeProdutos(i.id)}><FontAwesomeIcon icon={faTrashCan} /></button>
-							</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
+				<br />
+				<br />
+				<br />
+			</div>
 		</div>
 	);
 }
