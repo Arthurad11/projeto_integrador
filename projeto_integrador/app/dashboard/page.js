@@ -16,7 +16,7 @@ import { redirect } from "next/dist/server/api-utils";
 import Vendas from "../components/vendas/Vendas";
 
 function Dashboard() {
-	const [home, alteraHome] = useState();
+	const [home, alteraHome] = useState(true);
 	const [faturamento, alteraFaturamento] = useState();
 	const [estoque, alteraEstoque] = useState();
 	const [pedidos, alteraPedidos] = useState();

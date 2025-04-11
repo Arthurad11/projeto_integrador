@@ -1,17 +1,20 @@
 .container-tabela {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    
+    margin:0;
   }
   
   .produtos {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 0 ;
+
+    height: 92dvh !important;
+    
   }
   
   .scroll-tabela {
-    max-height: 1000px;
+    max-height: 800px;
     overflow-y: auto;
     
   }

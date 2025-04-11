@@ -60,17 +60,7 @@ function Faturamento() {
 
       {/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
       <div className="chart-row">
-        {/* Gráfico de faturamento mensal */}
-        <div className="chart-container">
-          <h3>Gráfico de Faturamento Mensal</h3>
-          <Chart
-            chartType="Bar"
-            width="100%"
-            height="300px"
-            data={graficoFaturamentoMensalData}
-            options={options}
-          />
-        </div>
+        
 
         {/* Gráfico de vendas mensal */}
         <div className="chart-container">
@@ -83,21 +73,8 @@ function Faturamento() {
             options={options}
           />
         </div>
-      </div>
+      
 
-      {/* Segunda linha de gráficos (faturamento anual e vendas anual) */}
-      <div className="chart-row">
-        {/* Gráfico de faturamento anual */}
-        <div className="chart-container">
-          <h3>Gráfico de Faturamento Anual</h3>
-          <Chart
-            chartType="Bar"
-            width="100%"
-            height="300px"
-            data={graficoFaturamentoAnualData}
-            options={options}
-          />
-        </div>
 
         {/* Gráfico de vendas anual */}
         <div className="chart-container">

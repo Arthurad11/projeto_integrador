@@ -5,9 +5,10 @@ import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-ic
 
 import "./estoque.css";
 
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
+import axios from "axios";
 
 function Estoque() {
 	//Mostra de produtos
@@ -22,7 +23,7 @@ function Estoque() {
 	const [pesquisa, alteraPesquisa] = useState("");
 
 	async function buscaPorId(id) {
-		const response = await axios.get("http://localhost:3000/api/produtos/" + id);
+		const response = await axios.get(`http://localhost:3000/api/produtos/${id}`);
 		alteraProdutos(response.data);
 	}
 	//

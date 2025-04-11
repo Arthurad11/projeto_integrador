@@ -7,6 +7,7 @@ import Clientes from "./clientes/Clientes";
 import Funcionarios from "./funcionarios/Funcionarios";
 import Faturamento from "./faturamento/Faturamento";
 import Home from "../page";
+import Vendas from "./vendas/Vendas";
 
 function Menu2() {
 	function toggleMenu() {
@@ -121,7 +122,7 @@ function Menu2() {
 
 				{estoque == true && <Estoque />}
 
-				{}
+				{pedidos == true && <Vendas />}
 
 				{clientes == true && <Clientes />}
 

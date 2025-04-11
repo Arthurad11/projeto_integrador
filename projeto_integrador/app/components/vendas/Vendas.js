@@ -19,7 +19,7 @@ function Vendas() {
 	}
 
 	//Pesquisa de produtos, seja por ID ou Nome
-	const [pesquisa, alteraPesquisa] = useState("");
+	const [pesquisa, setPesquisa] = useState("");
 
 	async function buscaPorId(id) {
 		const response = await axios.get("http://localhost:3000/api/vendas/" + id);
@@ -57,7 +57,7 @@ function Vendas() {
 					<p>Buscar venda:</p>
 					<input
 						type="text"
-						placeholder="Digite o nome ou ID"
+						placeholder="Digite o ID"
 						onChange={(e) => setPesquisa(e.target.value)}
 					/>
 					<button onClick={() => buscaPorId(pesquisa)}>Buscar</button>
