@@ -56,7 +56,7 @@ function Home() {
 						<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
 					</div>
 
-					<Funcionarios />
+					
 				</div>
 			</div>
 		</div>
