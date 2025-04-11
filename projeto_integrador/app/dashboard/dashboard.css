@@ -100,12 +100,16 @@ img{
     text-align: center;
     justify-content: center;
     padding: 0;
+    align-items: center;
+    
 }
 
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    align-items: center;
     
 
     width: 100%;

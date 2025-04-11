@@ -10,7 +10,7 @@ function Cadastro() {
 
     const [cadastrafunc, alteraCadastraFunc] = useState("")
 
-    const []
+
 
     async function cadastroFuncionario(){
 
