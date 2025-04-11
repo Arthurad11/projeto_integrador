@@ -18,6 +18,10 @@ function Produtos() {
 
 	//busca chopp
 	const [chopp, setChopp] = useState()
+	async function buscaChopp)() {
+		const response = await axios.get("http://localhost:3000/api/produtos/chopp")
+		setChopp(response.data)
+	}
 
 	//busca drinks
 	const [drinks, setDrinks] = useState()
@@ -37,6 +41,17 @@ function Produtos() {
 
 	//busca porções
 	const [porcoes, setPorcoes] = useState()
+
+	useState(() => {
+		buscaCerveja();
+		buscaChopp();
+		buscaDrinks();
+		buscaSucos();
+		buscaRefrigerantes();
+		buscaBebidas();
+		buscaEspetinhos();
+		buscaPorcoes();
+	}, []);
 
 
 	return (
