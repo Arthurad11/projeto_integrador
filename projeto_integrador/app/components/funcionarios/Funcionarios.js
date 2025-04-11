@@ -1,6 +1,9 @@
+'use client'
+
 import { useEffect, useState } from "react"
 import "./funcionarios.css"
 import axios from "axios"
+import { redirect } from "next/navigation";
 
 function Funcionarios() {
 
@@ -8,6 +11,23 @@ function Funcionarios() {
 
     const [clientes, alteraClientes] = useState([])
 
+	const [remover, alteraRemover] = useState([])
+
+	
+
+	async function atualizaFUNC(id){
+
+		const obj = {
+			funcionario : false
+		}
+
+		const response = await axios.put("http://localhost:3000/api/funcionarios/"+id, obj)
+		buscaTodos();
+		
+
+	}
+
+	
 
     async function buscaPorID( id ){
         const response = await axios.get("http://localhost:3000/api/funcionarios/"+id)
@@ -67,8 +87,8 @@ function Funcionarios() {
 									<td>{i.email}</td>
 									<td>{formataData(i.registro)}</td>
 									<td className="ferramentas">
-										<button onClick={() => montaEdicao(i)}>Editar</button>
-										<button onClick={() => removeProduto(i.id)}>Remover</button>
+										<button>Editar</button>
+										<button onClick={() => atualizaFUNC(i.id)}>Atualizar</button>
 									</td>
 								</tr>
 							))}

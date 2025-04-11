@@ -66,7 +66,7 @@ function Clientes() {
 								<th>Nome</th>
 								<th>Email</th>
 								<th>Registro</th>
-								<th>Ações</th>
+								
 							</tr>
 						</thead>
 						<tbody>
@@ -76,10 +76,6 @@ function Clientes() {
 									<td>{i.nome}</td>
 									<td>{i.email}</td>
 									<td>{formataData(i.registro)}</td>
-									<td>
-										<button className="botaoEditRemov" onClick={() => montaEdicao(i)}>Editar</button>
-										<button className="botaoEditRemov" onClick={() => removeProduto(i.id)}>Remover</button>
-									</td>
 								</tr>
 							))}
 						</tbody>
