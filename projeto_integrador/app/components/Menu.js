@@ -1,5 +1,7 @@
 "use client"
 
+
+import { redirect } from "next/navigation";
 import "./menu.css";
 import { useState } from "react";
 
@@ -27,8 +29,8 @@ function Menu() {
                 </div>
 
 				<ul>
-					<li onClick={()=> {alteraHome(true)}}>Home</li>
-					<li onClick={()=> {alteraProdutos(true)}}>Produtos</li>
+					<li onClick={()=> {redirect("/")}}>Home</li>
+					<li onClick={()=> {redirect("/produtos")}}>Produtos</li>
 					<li onClick={()=> {alteraLogin(true)}}className="login">Login</li>
 				</ul>
 			</nav>
