@@ -1,6 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
 
 import Clientes from "../components/clientes/Clientes";
