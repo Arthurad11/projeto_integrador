@@ -1,9 +1,44 @@
+"use client";
+
+import { useState } from "react";
 import Menu from "../components/Menu";
 import Produto from "./components/Produto";
 
 import "./produtos.css";
+import axios from "axios";
 
 function Produtos() {
+
+	//busca cerveja
+	const [cerveja, setCerveja] = useState()
+	async function buscaCerveja() {
+		const response = await axios.get("http://localhost:3000/api/produtos/cerveja")
+		setCerveja(response.data)
+	}
+
+	//busca chopp
+	const [chopp, setChopp] = useState()
+
+	//busca drinks
+	const [drinks, setDrinks] = useState()
+
+	//busca sucos
+	const [sucos, setSucos] = useState()
+	
+
+	//busca refrigerantes
+	const [refrigerantes, setRefrigerantes] = useState()
+
+	//busca bebidas em geral
+	const [bebidas, setBebidas] = useState()
+
+	//busca espetinhos
+	const [espetinhos, setEspetinhos] = useState()
+
+	//busca porções
+	const [porcoes, setPorcoes] = useState()
+
+
 	return (
 		<div>
 			<Menu />
@@ -13,9 +48,18 @@ function Produtos() {
 			<h1>Produtos</h1>
 			<br />
 
+
 			<div className="produtos">
 				<h2>Cerveja</h2>
 				<br />
+				
+				{
+					cerveja.map((i) => (
+						<div className="item-container">
+							<Produto nome="" preco=""/>
+						</div>
+					))
+				}
 
 				<div className="item-container">
 					<Produto nome="" preco=""/>
