@@ -8,13 +8,14 @@ import "./vendas.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
+import host from "@/app/lib/host";
 
 function Vendas() {
 	//Mostra de produtos
 	const [vendas, alteraVendas] = useState([]);
 
 	async function buscaTodasVendas() {
-		const response = await axios.get("http://localhost:3000/api/vendas");
+		const response = await axios.get(host+"/vendas");
 		alteraVendas(response.data);
 	}
 
@@ -22,7 +23,7 @@ function Vendas() {
 	const [pesquisa, setPesquisa] = useState("");
 
 	async function buscaPorId(id) {
-		const response = await axios.get("http://localhost:3000/api/vendas/" + id);
+		const response = await axios.get(host+"/vendas/" + id);
 		alteraVendas(response.data);
 	}
 	//

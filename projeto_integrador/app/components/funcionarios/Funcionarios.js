@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import "./funcionarios.css"
 import axios from "axios"
 import { redirect } from "next/navigation";
+import host from "@/app/lib/host";
 
 function Funcionarios() {
 
@@ -21,7 +22,7 @@ function Funcionarios() {
 			funcionario : false
 		}
 
-		const response = await axios.put("http://localhost:3000/api/funcionarios/"+id, obj)
+		const response = await axios.put(host+"/funcionarios/"+id, obj)
 		buscaTodos();
 		
 
@@ -30,13 +31,13 @@ function Funcionarios() {
 	
 
     async function buscaPorID( id ){
-        const response = await axios.get("http://localhost:3000/api/funcionarios/"+id)
+        const response = await axios.get(host+"/funcionarios/"+id)
         alteraClientes(response.data)
     }
 
 
     async function buscaTodos() {
-        const response = await axios.get("http://localhost:3000/api/funcionarios")
+        const response = await axios.get(host+"/funcionarios")
         alteraClientes(response.data)
     }
 

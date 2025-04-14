@@ -9,13 +9,14 @@ import "./estoque.css";
 import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 import axios from "axios";
+import host from "@/app/lib/host";
 
 function Estoque() {
 	//Mostra de produtos
 	const [produtos, alteraProdutos] = useState([]);
 
 	async function buscaTodosProdutos() {
-		const response = await axios.get("http://localhost:3000/api/produtos");
+		const response = await axios.get(host+"/produtos");
 		alteraProdutos(response.data);
 	}
 
@@ -23,14 +24,14 @@ function Estoque() {
 	const [pesquisa, alteraPesquisa] = useState("");
 
 	async function buscaPorId(id) {
-		const response = await axios.get(`http://localhost:3000/api/produtos/${id}`);
+		const response = await axios.get(host+`/produtos/${id}`);
 		alteraProdutos(response.data);
 	}
 	//
 
 	//Remover produtos
 	async function removeProdutos(id) {
-		await axios.delete("http://localhost:3000/api/produtos/" + id);
+		await axios.delete(host+"/produtos/" + id);
 		buscaTodosProdutos();
 	}
 

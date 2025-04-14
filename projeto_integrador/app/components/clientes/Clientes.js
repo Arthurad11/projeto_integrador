@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import "./clientes.css"
 import axios from "axios";
+import host from "@/app/lib/host";
 
 
 
@@ -14,13 +15,13 @@ function Clientes() {
 
 
     async function buscaPorID( id ){
-        const response = await axios.get("http://localhost:3000/api/clientes/"+id)
+        const response = await axios.get(host+"/clientes/"+id)
         alteraClientes(response.data)
     }
 
 
     async function buscaTodos() {
-        const response = await axios.get("http://localhost:3000/api/clientes")
+        const response = await axios.get(host+"/clientes")
         alteraClientes(response.data)
     }
 
