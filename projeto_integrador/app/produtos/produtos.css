@@ -3,10 +3,14 @@ body{
     padding: 0;
 
     text-align: center;
+
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
 
 h1{
     padding-bottom: 20px;
+    color: black;
 }
 
 .item-container{
@@ -16,6 +20,10 @@ h1{
 
     margin-left: 400px;
     margin-right: 400px;
+}
+
+img{
+    border-radius: 3px !important;
 }
 
 
