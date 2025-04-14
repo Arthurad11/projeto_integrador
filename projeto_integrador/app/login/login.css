@@ -102,3 +102,23 @@ body{
     }
     
 }
+
+
+/* .botaoVoltarHome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:0;
+
+} */
+
+.botaoVoltarHome {
+    position: absolute !important;
+    top: 10px;
+    left: 10px;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    width: auto !important;
+    height: auto !important;
+    z-index: 9999; /* garante que fique por cima */
+}
