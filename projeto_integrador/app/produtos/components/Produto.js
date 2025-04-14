@@ -5,9 +5,11 @@ function Produto(attr) {
 		<div>
 			<div className="item">
 				<h3>{attr.nome}</h3>
-                <img src="https://placehold.co/70"/>
+				<br/>
+                <img src={attr.imagem}/>
                 <br/>
-				<p>{attr.preco}</p>
+                <br/>
+				<p><strong>R$ {attr.preco}</strong></p>
 				<button>Comprar</button>
 			</div>
 		</div>

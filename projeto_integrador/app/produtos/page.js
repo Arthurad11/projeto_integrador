@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Menu from "../components/Menu";
 import Produto from "./components/Produto";
 
@@ -8,41 +8,63 @@ import "./produtos.css";
 import axios from "axios";
 
 function Produtos() {
-
 	//busca cerveja
-	const [cerveja, setCerveja] = useState()
+	const [cerveja, setCerveja] = useState();
 	async function buscaCerveja() {
-		const response = await axios.get("http://localhost:3000/api/produtos/cerveja")
-		setCerveja(response.data)
+		const response = await axios.get("http://localhost:3000/api/produtos/cerveja");
+		setCerveja(response.data);
 	}
 
 	//busca chopp
-	const [chopp, setChopp] = useState()
-	async function buscaChopp)() {
-		const response = await axios.get("http://localhost:3000/api/produtos/chopp")
-		setChopp(response.data)
+	const [chopp, setChopp] = useState();
+	async function buscaChopp() {
+		const response = await axios.get("http://localhost:3000/api/produtos/chopp");
+		setChopp(response.data);
 	}
 
 	//busca drinks
-	const [drinks, setDrinks] = useState()
+	const [drinks, setDrinks] = useState();
+	async function buscaDrinks() {
+		const response = await axios.get("http://localhost:3000/api/produtos/drinks");
+		setDrinks(response.data);
+	}
 
 	//busca sucos
-	const [sucos, setSucos] = useState()
-	
+	const [sucos, setSucos] = useState();
+	async function buscaSucos() {
+		const response = await axios.get("http://localhost:3000/api/produtos/sucos");
+		setSucos(response.data);
+	}
 
 	//busca refrigerantes
-	const [refrigerantes, setRefrigerantes] = useState()
+	const [refrigerantes, setRefrigerantes] = useState();
+	async function buscaRefrigerantes() {
+		const response = await axios.get("http://localhost:3000/api/produtos/refrigerantes");
+		setRefrigerantes(response.data);
+	}
 
 	//busca bebidas em geral
-	const [bebidas, setBebidas] = useState()
+	const [bebidas, setBebidas] = useState();
+	async function buscaBebidas() {
+		const response = await axios.get("http://localhost:3000/api/produtos/bebidas");
+		setBebidas(response.data);
+	}
 
 	//busca espetinhos
-	const [espetinhos, setEspetinhos] = useState()
+	const [espetinhos, setEspetinhos] = useState();
+	async function buscaEspetinhos() {
+		const response = await axios.get("http://localhost:3000/api/produtos/espetinhos");
+		setEspetinhos(response.data);
+	}
 
 	//busca porções
-	const [porcoes, setPorcoes] = useState()
+	const [porcoes, setPorcoes] = useState();
+	async function buscaPorcoes() {
+		const response = await axios.get("http://localhost:3000/api/produtos/porcoes");
+		setPorcoes(response.data);
+	}
 
-	useState(() => {
+	useEffect(() => {
 		buscaCerveja();
 		buscaChopp();
 		buscaDrinks();
@@ -53,7 +75,6 @@ function Produtos() {
 		buscaPorcoes();
 	}, []);
 
-
 	return (
 		<div>
 			<Menu />
@@ -63,21 +84,14 @@ function Produtos() {
 			<h1>Produtos</h1>
 			<br />
 
-
 			<div className="produtos">
 				<h2>Cerveja</h2>
 				<br />
-				
-				{
-					cerveja.map((i) => (
-						<div className="item-container">
-							<Produto nome="" preco=""/>
-						</div>
-					))
-				}
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{cerveja?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<br />
@@ -87,7 +101,9 @@ function Produtos() {
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{chopp?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 				<br />
 				<br />
@@ -96,42 +112,54 @@ function Produtos() {
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{drinks?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<h2>Sucos</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{sucos?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<h2>Refrigerantes</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{refrigerantes?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<h2>Bebidas em Geral</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{bebidas?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<h2>Espetinhos</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{espetinhos?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 
 				<h2>Porções</h2>
 				<br />
 
 				<div className="item-container">
-					<Produto nome="" preco=""/>
+					{porcoes?.map((i) => (
+						<Produto key={i.nome} nome={i.nome} preco={i.preco.toFixed(2)} imagem={`${i.imagem}`} />
+					))}
 				</div>
 			</div>
 
