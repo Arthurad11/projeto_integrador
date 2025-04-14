@@ -9,6 +9,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import host from "../lib/host";
 
+
 function Login() {
   const [logar, setLogar] = useState(true);
   const [criarConta, setCriarConta] = useState(false);
