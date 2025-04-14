@@ -10,7 +10,7 @@ function Home() {
 
   return (
     <div className="container">
-      <Menu />
+      <Menu /> 
 
       <header className="header">
         <img className="logo" src="/img/logo.png" alt="Logo do Bar do João" />
