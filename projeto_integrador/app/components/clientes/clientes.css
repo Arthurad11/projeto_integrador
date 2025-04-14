@@ -12,7 +12,7 @@ container-tabela {
   
   /* Scroll da tabela */
   .scroll-tabela {
-    max-height: 400px;
+    max-height: 550px !important;
     overflow-y: auto;
     border: 1px solid #ccc;
     border-radius: 8px;

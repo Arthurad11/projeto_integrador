@@ -13,7 +13,7 @@
   
   /* Wrapper com rolagem */
   .scroll-tabela {
-    max-height: 1000px;
+    max-height: 550px !important;
     overflow-y: auto;
     
   }

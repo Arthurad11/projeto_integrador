@@ -6,7 +6,7 @@ function Produto(attr) {
 			<div className="item">
 				<h3>{attr.nome}</h3>
 				<br/>
-                <img src={attr.imagem}/>
+                <img width={80} src={attr.imagem}/>
                 <br/>
                 <br/>
 				<p><strong>R$ {attr.preco}</strong></p>

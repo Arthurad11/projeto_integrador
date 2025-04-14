@@ -14,13 +14,13 @@
   }
   
   .scroll-tabela {
-    max-height: 800px;
+    max-height: 550px !important;
     overflow-y: auto;
     
   }
   
   .tabela-produtos {
-    width: 100%;
+    width: 700px ;
     border-collapse: collapse;
   }
   
