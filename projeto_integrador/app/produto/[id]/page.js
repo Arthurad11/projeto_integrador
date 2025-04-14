@@ -1,4 +1,5 @@
 'use client'
+import host from "@/app/lib/host";
 import axios from "axios";
 import { useParams, redirect } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -10,7 +11,7 @@ function Produto() {
     const [ produtos, alteraProdutos ] = useState([])
 
     async function buscaPorID( id ){
-        const response = await axios.get("http://localhost:3000/api/produtos/"+id)
+        const response = await axios.get(host+"/produtos/"+id)
         alteraProdutos( response.data )
     }
 
