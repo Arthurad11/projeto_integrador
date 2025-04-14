@@ -7,6 +7,7 @@ import axios from "axios";
 import { redirect } from "next/navigation";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import host from "../lib/host";
 
 function Login() {
   const [logar, setLogar] = useState(true);
@@ -44,7 +45,7 @@ function Login() {
         funcionario: false,
       };
 
-      const response = await axios.post("http://localhost:3000/api/login", obj);
+      const response = await axios.post(host+"/login", obj);
       alert("Cadastro realizado com sucesso");
     }
   }
