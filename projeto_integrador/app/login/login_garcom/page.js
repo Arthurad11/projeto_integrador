@@ -1,7 +1,9 @@
+'use client'
 import React from 'react';
-import './logincliente.css';
+import './logingarcom.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { redirect } from 'next/navigation';
 
 
 
@@ -27,25 +29,26 @@ const Card = () => {
 
         <div className="card__avatar">
           <img 
-            src="https://i.pinimg.com/736x/72/a0/e1/72a0e1f4e0f7b4461911a7c56d4688e9.jpg" 
-            alt="Avatar do cliente" 
+            src="https://cdn3d.iconscout.com/3d/premium/thumb/garcom-5796564-4841563.png?f=webp" 
+            alt="Avatar do garcom" 
           />
            
         </div>
 
-        <div className="card__nome"><strong>Denise sai da live</strong></div>
+        <div className="card__nome"><strong>Willian Souza</strong></div>
         <br/>
-        <div className="card__email">denise@gmail.com</div>
+        <div className="card__email">willian_souza@gmail.com</div>
         <br/>
+        <div className='card__garcom'>Garçom</div>
         <br/>
         <br/>
         
         <div className="card__wrapper">
-          <button className="card__btn">Visualizar Comanda</button>
+          <button onClick={()=> {redirect("/comanda_garcom")} } className="card__btn" >Comanda Garçom</button>
           <br/>
           <br/>
 
-          <button></button>
+          
 
           
 

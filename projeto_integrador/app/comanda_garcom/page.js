@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import "./garcom.css"; 
+import { redirect } from "next/navigation";
 
 function PainelGarcom() {
     const [mesaSelecionada, setMesaSelecionada] = useState(""); // armazenar a mesa selecionada
@@ -87,6 +88,8 @@ function PainelGarcom() {
             {/* Botão para Excluir Comanda */}
             <div className="button-container">
                 <button className="buttonexcluir" onClick={() => alert("Comanda excluída!")}>Adicionar Produto</button>
+                <button className="button_voltar" onClick={() => {redirect("/login/login_garcom")}} >Voltar</button>
+
             </div>
         </div>
     );
