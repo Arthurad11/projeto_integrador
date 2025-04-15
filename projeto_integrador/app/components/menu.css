@@ -11,11 +11,18 @@ nav{
 
     height: 8vh;
 
+    margin-bottom: 8vh;
+
 
     background-color: black;
     color:aliceblue;
 
-    position: static;
+    position: fixed;
+
+    width: 100vw;
+    z-index: 1000;
+
+    
     
 }
 

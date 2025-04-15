@@ -6,61 +6,62 @@ import Produto from "./components/Produto";
 
 import "./produtos.css";
 import axios from "axios";
+import host from "../lib/host";
 
 function Produtos() {
 	//busca cerveja
 	const [cerveja, setCerveja] = useState();
 	async function buscaCerveja() {
-		const response = await axios.get("http://localhost:3000/api/produtos/cerveja");
+		const response = await axios.get(host+"/produtos/cerveja");
 		setCerveja(response.data);
 	}
 
 	//busca chopp
 	const [chopp, setChopp] = useState();
 	async function buscaChopp() {
-		const response = await axios.get("http://localhost:3000/api/produtos/chopp");
+		const response = await axios.get(host+"/produtos/chopp");
 		setChopp(response.data);
 	}
 
 	//busca drinks
 	const [drinks, setDrinks] = useState();
 	async function buscaDrinks() {
-		const response = await axios.get("http://localhost:3000/api/produtos/drinks");
+		const response = await axios.get(host+"/produtos/drinks");
 		setDrinks(response.data);
 	}
 
 	//busca sucos
 	const [sucos, setSucos] = useState();
 	async function buscaSucos() {
-		const response = await axios.get("http://localhost:3000/api/produtos/sucos");
+		const response = await axios.get(host+"/produtos/sucos");
 		setSucos(response.data);
 	}
 
 	//busca refrigerantes
 	const [refrigerantes, setRefrigerantes] = useState();
 	async function buscaRefrigerantes() {
-		const response = await axios.get("http://localhost:3000/api/produtos/refrigerantes");
+		const response = await axios.get(host+"/produtos/refrigerantes");
 		setRefrigerantes(response.data);
 	}
 
 	//busca bebidas em geral
 	const [bebidas, setBebidas] = useState();
 	async function buscaBebidas() {
-		const response = await axios.get("http://localhost:3000/api/produtos/bebidas");
+		const response = await axios.get(host+"/produtos/bebidas");
 		setBebidas(response.data);
 	}
 
 	//busca espetinhos
 	const [espetinhos, setEspetinhos] = useState();
 	async function buscaEspetinhos() {
-		const response = await axios.get("http://localhost:3000/api/produtos/espetinhos");
+		const response = await axios.get(host+"/produtos/espetinhos");
 		setEspetinhos(response.data);
 	}
 
 	//busca porções
 	const [porcoes, setPorcoes] = useState();
 	async function buscaPorcoes() {
-		const response = await axios.get("http://localhost:3000/api/produtos/porcoes");
+		const response = await axios.get(host+"/produtos/porcoes");
 		setPorcoes(response.data);
 	}
 

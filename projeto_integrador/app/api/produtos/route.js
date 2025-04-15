@@ -17,11 +17,11 @@ export async function GET(){
 export async function POST(request) {
     const body = await request.json();
 
-    const query = `INSERT INTO produtos (nome, id_categoria, preco) VALUES (?, ?, ?);`;
+    const query = `INSERT INTO produtos (nome, id_categoria, preco, imagem) VALUES (?, ?, ?, ?);`;
 
     const [results] = await conexao.execute(
         query,
-        [body.nome, body.categoria, body.valor] // Alterei os nomes das variáveis para 'categoria' e 'valor'
+        [body.nome, body.categoria, body.valor, body.imagem] // Alterei os nomes das variáveis para 'categoria' e 'valor'
     );
 
     return new Response(

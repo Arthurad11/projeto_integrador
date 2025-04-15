@@ -3,6 +3,7 @@
 import axios from 'axios';
 import './cadfunc.css'
 import { useEffect, useState } from 'react';
+import host from '../lib/host';
 
 function Cadastro() {
     const [cadastrarFunc, setCadastro] = useState(true);
@@ -18,7 +19,7 @@ function Cadastro() {
             nome: nome
         }
 
-        const response = await axios.post("http://localhost:3000/api/cadastro/")
+        const response = await axios.post(host+"/cadastro/")
 		alteraCadastraFunc( response.data )
 
     }
