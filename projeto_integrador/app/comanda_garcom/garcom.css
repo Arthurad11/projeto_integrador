@@ -1,6 +1,6 @@
 body {
-    background: #4f4f4f;
-    color: #f8f8ff;
+    background: black !important;
+    color: #f8f8ff !important;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
@@ -109,4 +109,14 @@ h1, h2, h3 {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
+}
+
+.button_voltar{
+    background-color: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
 }

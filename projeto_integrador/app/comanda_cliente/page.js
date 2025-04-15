@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import "./cliente.css";
+import { redirect } from "next/navigation";
 
 function Comanda() {
     const [total, setTotal] = useState(0);
@@ -40,6 +41,7 @@ function Comanda() {
                 <br/>
 
                 <h2>Pedido - Mesa {mesaId}</h2>
+                <p> Data </p>
                 <br/>
 
                 <h3>Bebidas</h3>
@@ -78,6 +80,11 @@ function Comanda() {
                 <label id="total">Total: R$ {total.toFixed(2)}</label>
 
                 <br/><br/>
+                
+                <div>
+
+                 <button className="button_voltar" onClick={() => {redirect("/login/login_cliente")}} >Voltar</button>
+                </div>
 
                
 

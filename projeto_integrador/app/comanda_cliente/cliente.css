@@ -1,6 +1,6 @@
 body {
-    background: #4f4f4f;
-    color: #f8f8ff;
+    background: black !important;
+    color: #f8f8ff !important;
     font-family: 'Open Sans', sans-serif;
     text-align: center;
 }
@@ -38,18 +38,7 @@ h3 {
     gap: 20px;
 }
 
-button {
-    border: 1.5px ;
-    padding: 10px;
-    width: 120px;
-    color: #ffffff;
-    background-color: blue;
-    box-shadow: 3px 3px 6px #101014;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-    border-radius: 5px;
-    outline: none;
-}
+
 
 button:hover {
     transform: scale(1.1);
@@ -65,3 +54,15 @@ button:hover {
     color: white;
 }
 
+.button_voltar {
+    border: 1.5px ;
+    padding: 10px;
+    width: 120px;
+    color: #ffffff;
+    background-color: black;
+    box-shadow: 3px 3px 6px #101014;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
