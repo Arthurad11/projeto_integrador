@@ -24,6 +24,28 @@ function Login() {
   const [senha, setSenha] = useState(""); // senha e verifica se as senhas estão iguais
   const [confirmaSenha, setConfirmaSenha] = useState("");
 
+  async function entrar(e){
+    e.preventDefault();
+
+    const response = await axios.get(host+"/usuarios")
+    
+
+    if(response.data.length == 0){
+      alert("Usuário ou senha incorretos");
+      return;
+    }
+
+    const usuario = JSON.stringify(usuario);
+
+    localStorage.setItem("usuario", usuario);
+
+
+
+    window.location.href = "/comanda_cliente";
+
+
+  }
+
 
   async function verificaDados(e) {
 
@@ -84,7 +106,7 @@ function Login() {
             <label>
               Usuário <br />
             </label>
-            <input type="text" placeholder="Usuário"/>
+            <input type="text" placeholder="Usuário" onChange={ (e)=> setEmail(e.target.value) } />
 
             <br />
             <br />
@@ -92,12 +114,12 @@ function Login() {
             <label>
               Senha <br />
             </label>
-            <input type="password" placeholder="Senha"/>
+            <input type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)}/>
 
             <br />
             <br />
 
-            <button className="enter">
+            <button className="enter" onClick={(e) => entrar(e)}>
               Entrar
             </button>
             <button
