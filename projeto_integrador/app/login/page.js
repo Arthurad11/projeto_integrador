@@ -52,7 +52,7 @@ function Login() {
       try{
         const response = await axios.post(host+"/login", obj);
         localStorage.setItem("usuario", JSON.stringify(response.data));
-        window.location.href = "/login/login_cliente";
+        window.location.href = "/";
         alert("Cadastro realizado com sucesso");
       }catch{
         alert("Erro ao cadastrar");
