@@ -85,7 +85,12 @@ function Login() {
   }
 
   return (
-    <div>
+    
+      <main>
+        
+      
+      <div>
+
       <div>
         {logar == true && (
           <div className="login">
@@ -209,7 +214,15 @@ function Login() {
           </form>
         )}
       </div>
-    </div>
+      </div>
+      
+    
+
+    
+    </main>
+    
+        
+   
   );
 }
 
