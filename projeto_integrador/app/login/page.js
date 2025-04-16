@@ -25,7 +25,10 @@ function Login() {
   const [confirmaSenha, setConfirmaSenha] = useState("");
 
 
-  async function verificaDados() {
+  async function verificaDados(e) {
+
+    e.preventDefault();
+
     if (
       usuario == "" ||
       email == "" ||
@@ -46,8 +49,16 @@ function Login() {
         funcionario: false,
       };
 
-      const response = await axios.post(host+"/login", obj);
-      alert("Cadastro realizado com sucesso");
+      try{
+        const response = await axios.post(host+"/login", obj);
+        localStorage.setItem("usuario", JSON.stringify(response.data));
+        window.location.href = "/login/login_cliente";
+        alert("Cadastro realizado com sucesso");
+      }catch{
+        alert("Erro ao cadastrar");
+      }
+
+      
     }
   }
 
