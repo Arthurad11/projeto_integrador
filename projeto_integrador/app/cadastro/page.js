@@ -13,31 +13,26 @@ function Cadastro() {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
+    const [funcionario, setFuncionario] = useState(true);
 
     async function cadastroFuncionario(e) {
-        e.preventDefault(); // evita o reload da página
+    
+        e.preventDefault();
 
         const obj = {
-            nome,
-            email,
-            senha
+            nome: nome,
+            email: email,
+            senha: senha,
+            funcionario: funcionario
         };
 
-<<<<<<< Updated upstream
-        const response = await axios.post(host+"/cadastro/")
-		alteraCadastraFunc( response.data )
-=======
-        
-            const response = await axios.post("http://localhost:3000/api/cadastro/", obj);
-            
-            // salva usuário no localStorage
+        try {
+            const response = await axios.post(host +"/cadastro", obj);
             localStorage.setItem("usuario", JSON.stringify(response.data));
->>>>>>> Stashed changes
-
-            // redireciona para dashboard
             window.location.href = "/dashboard";
-        
-            alert("Erro ao cadastrar funcionário.");
+        } catch (err) {
+            console.error("Erro ao cadastrar:", err.message);
+        }
         
     }
 
@@ -45,7 +40,7 @@ function Cadastro() {
         <div>
             {cadastrarFunc && (
                 <div className="conjunto">
-                    <form onSubmit={cadastroFuncionario}>
+                    <form onSubmit={(e)=> cadastroFuncionario(e)}>
                         <h1 className="titulo">Cadastro de Funcionário</h1>
                         <p>Nome Completo:</p>
                         <input
