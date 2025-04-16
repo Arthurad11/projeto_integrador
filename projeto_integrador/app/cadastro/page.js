@@ -9,44 +9,79 @@ function Cadastro() {
     const [cadastrarFunc, setCadastro] = useState(true);
     const [alteraCadastro, setAlteraCadastro] = useState(false);
 
-    const [cadastrafunc, alteraCadastraFunc] = useState("")
+    // estados para os dados do formulário
+    const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
 
-
-
-    async function cadastroFuncionario(){
+    async function cadastroFuncionario(e) {
+        e.preventDefault(); // evita o reload da página
 
         const obj = {
-            nome: nome
-        }
+            nome,
+            email,
+            senha
+        };
 
+<<<<<<< Updated upstream
         const response = await axios.post(host+"/cadastro/")
 		alteraCadastraFunc( response.data )
+=======
+        
+            const response = await axios.post("http://localhost:3000/api/cadastro/", obj);
+            
+            // salva usuário no localStorage
+            localStorage.setItem("usuario", JSON.stringify(response.data));
+>>>>>>> Stashed changes
 
+            // redireciona para dashboard
+            window.location.href = "/dashboard";
+        
+            alert("Erro ao cadastrar funcionário.");
+        
     }
-
-
 
     return ( 
         <div>
-            
             {cadastrarFunc && (
                 <div className="conjunto">
-                    <form action="" method="">
+                    <form onSubmit={cadastroFuncionario}>
                         <h1 className="titulo">Cadastro de Funcionário</h1>
                         <p>Nome Completo:</p>
-                        <input placeholder="Digite seu nome aqui..." onChange={(e)=> setNome(e.target.value
+                        <input
+                            placeholder="Digite seu nome aqui..."
+                            value={nome}
+                            onChange={(e) => setNome(e.target.value)}
+                        />
 
-                        )}/>
                         <p>Email:</p>
-                        <input placeholder="Digite seu email..." /> 
+                        <input
+                            placeholder="Digite seu email..."
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+
                         <br/><br/>
+
                         <p>Senha:</p>
-                        <input placeholder="Digite sua senha aqui..." type="password"/>
+                        <input
+                            placeholder="Digite sua senha aqui..."
+                            type="password"
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)}
+                        />
+
                         <br/><br/>
-                        <button className="botao" onClick={(e)=> cadastroFuncionario(e)}>Cadastrar</button>
+
+                        <button type="submit" className="botao">
+                            Cadastrar
+                        </button>
+
                         <br/><br/>
-                        <button 
-                            className="botaoAlterar"  
+
+                        <button
+                            type="button"
+                            className="botaoAlterar"
                             onClick={() => {
                                 setCadastro(false);
                                 setAlteraCadastro(true);
@@ -70,8 +105,8 @@ function Cadastro() {
                     <br/><br/>
                     <button className="botao">Atualizar</button>
                     <br/><br/>
-                    <button 
-                        className="botaoAlterar"  
+                    <button
+                        className="botaoAlterar"
                         onClick={() => {
                             setCadastro(true);
                             setAlteraCadastro(false);
