@@ -2,7 +2,7 @@
 
 body{
 
-    margin: 0;
+    margin: 80px;
     padding: 0;
 
     justify-content: center;
@@ -10,7 +10,7 @@ body{
 
     font-family: "Open Sans"; 
 
-    background-color: #4f4f4f;
+    background-color: black;
     color: #f8f8ff;
 
     display: flex;
@@ -18,13 +18,10 @@ body{
 
 }
 .conjunto{
-
-    width: 300px;
-
+    width: 600px;
     color: #f8f8ff;
     text-align: center;
     background: #333;
-   
     margin-left: 25px;
     margin-right: 25px; 
     padding: 20px;
@@ -65,9 +62,9 @@ body{
 
     border: none;
     background-color: rgb(152, 247, 10);
-    margin-top: 40px;
-    padding: 20px;
-    box-shadow: 1px 2px 3px #444;
+    margin-top: 0px;
+    padding: 10px;
+    box-shadow: 1px 2px 3px black;
     border-radius: 10px;
     font-size: 20px;
 }
@@ -76,3 +73,12 @@ body{
     background: rgb(50, 148, 25);
     transition: 0.3s;
 }
+
+.button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 1px 2px 3px black;
+}
+

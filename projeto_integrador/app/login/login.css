@@ -7,7 +7,7 @@ body{
 
     font-family: "Open Sans", sans-serif;
 
-    background-color: #4f4f4f;
+    background-color: black;
     color: #f8f8ff;
 
     display: flex;
@@ -79,7 +79,7 @@ body{
    border-radius: 8px;
 
 
-   background-color: blue;
+   background-color: rgb(0, 0, 0);
 
    color: #f8f8ff;
 
@@ -87,7 +87,7 @@ body{
 }
 
 .login button:hover{
-    background-color: rgb(0, 0, 201);
+    
 }
 
 .criarConta {
@@ -122,3 +122,17 @@ body{
     height: auto !important;
     z-index: 9999; /* garante que fique por cima */
 }
+.footer {  
+    text-align: center;
+    padding: 30px 0;
+    color: white;
+    font-size: 0.9rem;
+
+    position: absolute;
+
+    bottom: 200px;
+    
+    display: flex;
+
+ 
+} 
