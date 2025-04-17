@@ -46,11 +46,11 @@ function Login() {
     localStorage.setItem("usuario", usuario);
 
 
-    if (response.data[0].funcionario == 1) {
+    if (response.data[0].funcionario === 1 && response.data[0].admin === 0) {
       window.location.href = "/comanda_garcom";
-    } else if (response.data[0].funcionario == 1 && response.data[0].admin == 1) {
+    } else if (response.data[0].funcionario === 1 && response.data[0].admin === 1) {
       window.location.href = "/dashboard";
-    } else if (response.data[0].funcionario == 0) {
+    } else if (response.data[0].funcionario === 0 && response.data[0].admin === 0) {
       window.location.href = "/comanda_cliente";
     } else {
       alert("Usuário não encontrado");
