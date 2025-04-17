@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import "./cliente.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import host from "../lib/host";
+import axios from "axios";
 
 
 
@@ -11,7 +13,12 @@ function Comanda() {
   const [total, setTotal] = useState(0);
   const [selecionados, setSelecionados] = useState({});
   const [mesaId, setMesaId] = useState(7);
-  const [mostrarComanda, setMostrarComanda] = useState(false);
+  const [mostrarComanda, setMostrarComanda] = useState(true);
+
+  const [usuario, setUsuario] = useState({});
+  const [idUsuario, setIdUsuario] = useState(0);
+
+  const [comanda, setComanda] = useState([]);
 
   const calcularTotal = (valor, checked, id) => {
     const valorNumerico = Number(valor);
@@ -24,15 +31,34 @@ function Comanda() {
 		window.location.href = "/";
 	}
 
-  useEffect(() => {
-		const usuarioLocal = localStorage.getItem("usuario");
+  
 
+  async function buscaPedido(id){
+    console.log(id);
+    const response = await axios.get(host+ "/comanda/"+id);
+
+    setComanda(response.data);
+
+    setMesaId(response.data[0].mesa);
+
+
+    setTotal(response.data.reduce((acc, item) => acc + item.preco * item.quantidade, 0))
+
+  }
+
+  
+
+  useEffect(() => {
+
+    const usuarioLocal = localStorage.getItem("usuario");
+    
 		if(usuarioLocal == "" || usuarioLocal == null){
-			window.location.href = "/";
+      window.location.href = "/";
 			return;
 		}
-
+    
 		setUsuario(JSON.parse(usuarioLocal));
+    buscaPedido(JSON.parse(usuarioLocal).id)
 	}, []);
 
 
@@ -59,8 +85,8 @@ function Comanda() {
               alt="Avatar do cliente"
             />
           </div>
-          <div className="card__nome">Denise sai da live</div>
-          <div className="card__email">denise@gmail.com</div>
+          <div className="card__nome">{usuario.nome}</div>
+          <div className="card__email">{usuario.email}</div>
           <div className="card__wrapper">
             <button className="card__btn" onClick={() => setMostrarComanda(!mostrarComanda)}>
               {mostrarComanda ? "Fechar Comanda" : "Visualizar Comanda"}
@@ -75,7 +101,7 @@ function Comanda() {
       </div>
 
       {mostrarComanda && (
-        <div className="comanda-card">
+        <div className="comanda-card" >
           <div className="card__img"></div>
           <div className="card__content">
             <h2>Comanda - Mesa {mesaId}</h2>
@@ -83,32 +109,17 @@ function Comanda() {
             
             <p>{new Date().toLocaleDateString()}</p>
 
-            <div className="item">
-              <input
+            {comanda.map( (i)=> (
+              <div className="item">
+              {/* <input
                 type="checkbox"
-                checked={!!selecionados[2]}
-                onChange={(e) => calcularTotal(8, e.target.checked, 2)}
-              />
-              Cerveja Long Neck - R$ 8,00
+                checked={!!selecionados[i]}
+                onChange={(e) => calcularTotal(8, e.target.checked, i)}
+              /> */}
+              {i.nome} - R$ {(i.preco*i.quantidade).toFixed(2)}
             </div>
+            ) )}
 
-            <div className="item">
-              <input
-                type="checkbox"
-                checked={!!selecionados[3]}
-                onChange={(e) => calcularTotal(9, e.target.checked, 3)}
-              />
-              Espetinho de Frango - R$ 9,00
-            </div>
-
-            <div className="item">
-              <input
-                type="checkbox"
-                checked={!!selecionados[4]}
-                onChange={(e) => calcularTotal(18, e.target.checked, 4)}
-              />
-              Porção de Batata Frita - R$ 18,00
-            </div>
 
             <div className="total-label">Total: R$ {total.toFixed(2)}</div>
           </div>
