@@ -24,6 +24,17 @@ function Comanda() {
 		window.location.href = "/";
 	}
 
+  useEffect(() => {
+		const usuarioLocal = localStorage.getItem("usuario");
+
+		if(usuarioLocal == "" || usuarioLocal == null){
+			window.location.href = "/";
+			return;
+		}
+
+		setUsuario(JSON.parse(usuarioLocal));
+	}, []);
+
 
   useEffect(() => {
     if (mesaId && mesaId % 2 === 0) {
