@@ -1,9 +1,11 @@
 import conexao from "@/app/lib/conexao"
 
-export async function GET (){
+export async function POST( request ){
+
+    const body = await request.json()
 
     const query = `SELECT * FROM usuarios WHERE email = ? AND senha = ?`;
-    const [results] = await conexao.execute ( query )
+    const [results] = await conexao.execute ( query, [body.email, body.senha] )
 
     return new Response(
         JSON.stringify(results),

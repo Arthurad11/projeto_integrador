@@ -110,3 +110,6 @@ ul.active li {
     }
 }
 
+li{
+    cursor: pointer;
+}

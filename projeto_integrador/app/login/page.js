@@ -27,7 +27,13 @@ function Login() {
   async function entrar(e){
     e.preventDefault();
 
-    const response = await axios.get(host+"/usuarios")
+    const obj = {
+      email: email,
+      senha: senha
+
+    }
+
+    const response = await axios.post(host+"/usuarios", obj);
     
 
     if(response.data.length == 0){
@@ -35,7 +41,7 @@ function Login() {
       return;
     }
 
-    const usuario = JSON.stringify(usuario);
+    const usuario = JSON.stringify(response.data[0]);
 
     localStorage.setItem("usuario", usuario);
 
