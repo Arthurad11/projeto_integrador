@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import "./cliente.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -44,6 +46,11 @@ function Comanda() {
             <button className="card__btn" onClick={() => setMostrarComanda(!mostrarComanda)}>
               {mostrarComanda ? "Fechar Comanda" : "Visualizar Comanda"}
             </button>
+
+            <br/>
+
+            <button className="card__btn" ><FontAwesomeIcon width={20} height={14} icon={faArrowRightToBracket}    /></button>
+
           </div>
         </div>
       </div>
