@@ -10,7 +10,7 @@ function Produto(attr) {
                 <br/>
                 <br/>
 				<p><strong>R$ {attr.preco}</strong></p>
-				<button>Comprar</button>
+				<button onClick={()=> attr.funcao} >Comprar</button>
 			</div>
 		</div>
 	);

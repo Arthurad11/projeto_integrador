@@ -65,6 +65,13 @@ function Produtos() {
     setPorcoes(response.data);
   }
 
+  const [mandaProduto, setMandaProduto] = useState();
+  async function mandaProdutos(){
+	const response = await axios.post(host + "/vendas")
+	setMandaProduto(response.data);
+  }
+
+
   useEffect(() => {
     buscaCerveja();
     buscaChopp();
@@ -96,6 +103,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -113,6 +121,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -129,6 +138,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -143,6 +153,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -157,6 +168,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -171,6 +183,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -185,6 +198,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -199,6 +213,7 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
+				funcao={mandaProdutos()}
               />
             ))}
           </div>
