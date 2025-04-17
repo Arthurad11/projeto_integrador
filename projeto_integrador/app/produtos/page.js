@@ -83,6 +83,20 @@ function Produtos() {
 			<br />
 
 			<h1>Produtos</h1>
+
+
+			<select className="selecionar" >
+				<option>Cerveja</option>
+				<option>Chopp</option>
+				<option>Drinks</option>
+				<option>Sucos</option>
+				<option>Refrigerantes</option>
+				<option>Bebidas em geral</option>
+				<option>Porções</option>
+				<option>Espetinhos</option>
+			</select>
+		
+
 			<br />
 
 			<div className="produtos">

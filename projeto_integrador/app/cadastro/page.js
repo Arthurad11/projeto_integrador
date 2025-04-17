@@ -38,17 +38,10 @@ function Cadastro() {
 
     return ( 
         <div>
-                <div className="logo-wrapper">
-                <img className="logo-img" src="/img/logo.png" alt="Logo do Bar" />
-                 </div>
             {cadastrarFunc && (
-
-                
-                
                 <div className="conjunto">
                     <form onSubmit={(e)=> cadastroFuncionario(e)}>
                         <h1 className="titulo">Cadastro de Funcionário</h1>
-                        <hr/>
                         <p>Nome Completo:</p>
                         <input
                             placeholder="Digite seu nome aqui..."

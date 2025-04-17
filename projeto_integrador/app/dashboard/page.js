@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import "./dashboard.css";
 import Faturamento from "../components/faturamento/Faturamento";
 import Home from "../components/Home";
+import { redirect } from "next/dist/server/api-utils";
 import Vendas from "../components/vendas/Vendas";
 
 function Dashboard() {
@@ -21,25 +22,6 @@ function Dashboard() {
 	const [pedidos, alteraPedidos] = useState();
 	const [clientes, alteraClientes] = useState();
 	const [funcionarios, alteraFuncionarios] = useState();
-
-	const [usuario, setUsuario] = useState("");
-
-	function deslogar(){
-		localStorage.removeItem("usuario");
-		window.location.href = "/";
-	}
-
-	useEffect(() => {
-		const usuarioLocal = localStorage.getItem("usuario");
-
-		if(usuarioLocal == "" || usuarioLocal == null){
-			window.location.href = "/";
-			return;
-		}
-
-		setUsuario(JSON.parse(usuarioLocal));
-	}, []);
-
 
 	return (
 		<div>
@@ -121,7 +103,7 @@ function Dashboard() {
 						</li>
 
 						<li>
-							<button className="deslogar" onClick={()=>deslogar()}>
+							<button className="deslogar">
 								<img className="imagemSair" src="https://cdn-icons-png.flaticon.com/512/4043/4043198.png" /> Sair da Conta
 							</button>
 						</li>

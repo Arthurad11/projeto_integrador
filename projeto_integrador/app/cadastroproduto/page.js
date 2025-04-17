@@ -41,10 +41,9 @@ function CadProduto() {
     <form className="conjunto" onSubmit={(e) => cadastrarProduto(e)}>
 
         
-        <button className="button" onClick={()=> window.location.href = "/dashboard" } ><FontAwesomeIcon icon={faArrowLeft} />Voltar</button>
+        <button onClick={()=> window.location.href = "/dashboard" } ><FontAwesomeIcon icon={faArrowLeft} />Voltar</button>
 
         <h1 className="titulo"> Cadastro de produto </h1>
-        <hr/>
 
         <p> Produto: </p>
         <input required placeholder="Digite o produto aqui..." onChange={(e)=> alteraNome(e.target.value)}/>
