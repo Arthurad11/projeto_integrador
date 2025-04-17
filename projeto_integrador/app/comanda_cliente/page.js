@@ -19,11 +19,19 @@ function Comanda() {
     setSelecionados(prev => ({ ...prev, [id]: checked }));
   };
 
+  function deslogar(){
+		localStorage.removeItem("usuario");
+		window.location.href = "/";
+	}
+
+
   useEffect(() => {
     if (mesaId && mesaId % 2 === 0) {
       alert(`Comanda da Mesa ${mesaId} carregada!`);
     }
   }, [mesaId]);
+
+
 
   return (
     <div className="container">
@@ -49,7 +57,7 @@ function Comanda() {
 
             <br/>
 
-            <button className="card__btn" ><FontAwesomeIcon width={20} height={14} icon={faArrowRightToBracket}    /></button>
+            <button className="card__btn" onClick={()=>deslogar()} ><FontAwesomeIcon width={20} height={14} icon={faArrowRightToBracket}    /></button>
 
           </div>
         </div>
