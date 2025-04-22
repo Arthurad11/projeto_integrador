@@ -65,11 +65,11 @@ function Produtos() {
     setPorcoes(response.data);
   }
 
-  const [mandaProduto, setMandaProduto] = useState();
-  async function mandaProdutos(){
-	const response = await axios.post(host + "/vendas")
-	setMandaProduto(response.data);
-  }
+  // const [mandaProduto, setMandaProduto] = useState();
+  // async function mandaProdutos(){
+	// const response = await axios.post(host + "/vendas")
+	// setMandaProduto(response.data);
+  // }
 
 
   useEffect(() => {
