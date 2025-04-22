@@ -21,7 +21,7 @@ body {
   }
   
   h3 {
-    color: #000000;
+    color: white;
     margin-bottom: 10px;
   }
   
@@ -114,6 +114,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 500px;
+    margin: -60px;
+
   }
   
   .card__content {
@@ -163,5 +166,45 @@ body {
     font-size: 0.9rem;
     position: fixed;
     margin-top: 600px;
+  }
+  .comanda-card {
+    background: linear-gradient(145deg, #1c1c1c, #2c2c2c);
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 30px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 500px;
+    text-align: left;
+    animation: fadeInUp 0.8s ease;
+  }
+  
+  .comanda-card h3 {
+    font-size: 22px;
+    color: #f8f8ff;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .comanda-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .comanda-card li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .comanda-card p {
+    text-align: right;
+    font-weight: bold;
+    font-size: 16px;
+    color: #f8f8ff;
   }
   
