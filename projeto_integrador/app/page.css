@@ -1,87 +1,120 @@
+/* Body e fundo */
 body {
     margin: 0;
-    background-color: #000000;
-    color: #F5F5DC; /* bege claro */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fundo escuro para modernidade */
+    color: #F5F5DC; /* Beige claro para contraste elegante */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
 }
 
+/* Container */
 .container {
-    padding: 0px;
+    padding: 20px;
 }
 
+/* Header com logo e título */
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
+    padding: 40px 0;
+    text-align: center;
 }
 
 .logo {
-    width: 400px;
+    width: 350px;
     height: auto;
-    margin-bottom: 15px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg); /* Logo gira ao passar o mouse */
 }
 
 h1 {
-    font-size: 2.5rem;
-    color: #F5F5DC;
-    text-align: center;
+    font-size: 3rem;
+    color: #FFD700; /* Dourado para destaque */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
 }
 
+h1:hover {
+    color: #F5F5DC; /* Muda para bege quando passa o mouse */
+}
+
+/* Hero Section */
 .hero {
     display: flex;
     justify-content: center;
-    margin: 40px ;
-    
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0;
+    animation: fadeInUp 1.5s ease;
 }
 
-/* Animação Uiverse estilosa */
+/* Card central */
 .card-uiverse {
-    background: linear-gradient(145deg, #1c1c1c, #2c2c2c);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
-    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+    box-shadow: 0 6px 50px rgba(0, 0, 0, 0.9);
+    border-radius: 15px;
     padding: 40px;
-    text-align: center;
-    width: 80%;
+    width: 90%;
     max-width: 500px;
-    transition: all 0.3s ease-in-out;
+    text-align: center;
+    color: #F5F5DC;
+    transition: all 0.3s ease;
     animation: fadeInUp 1s ease;
 }
 
 .card-uiverse:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
 }
 
 .card-uiverse h2 {
-    color: #F5F5DC;
+    font-size: 2rem;
+    font-weight: 600;
     margin-bottom: 15px;
 }
 
 .card-uiverse p {
     color: #d3cfc4;
     font-size: 1rem;
+    margin-top: 10px;
 }
 
+/* Ícone de cerveja */
 .beer-icon img {
-    width: 80px;
-    animation: bounce 2s infinite;
+    width: 100px;
+    animation: bounce 2s infinite ease-in-out;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
+.beer-icon img:hover {
+    transform: rotate(20deg); /* Aumento da rotação ao passar o mouse */
+}
+
+/* Footer */
 .footer {
     text-align: center;
     padding: 30px 0;
+    font-size: 1rem;
     color: #888;
-    font-size: 0.9rem;
-
-    
+    margin-top: auto;
 }
 
 @keyframes bounce {
     0%, 100% {
-        transform: translateY(0px);
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-15px);
     }
 }
 
@@ -92,11 +125,30 @@ h1 {
     }
     to {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(0);
     }
 }
 
-.logo{
-    border-radius: 20px;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    .header {
+        padding: 20px 0;
+    }
 
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .card-uiverse {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .beer-icon img {
+        width: 80px;
+    }
+}
+/* Player de áudio escondido */
+audio {
+    display: none;
+}
