@@ -4,6 +4,9 @@ import axios from 'axios';
 import './cadfunc.css'
 import { useEffect, useState } from 'react';
 import host from '../lib/host';
+import ClienteForm from "@/components/clientes/ClienteForm";
+
+
 
 function Cadastro() {
     const [cadastrarFunc, setCadastro] = useState(true);
@@ -37,6 +40,7 @@ function Cadastro() {
     }
 
     return ( 
+        
         <div>
                 <div className="logo-wrapper">
                 <img className="logo-img" src="/img/logo.png" alt="Logo do Bar" />
