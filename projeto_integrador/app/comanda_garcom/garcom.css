@@ -208,3 +208,22 @@ body {
     color: #f8f8ff;
   }
   
+  .comanda-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .item-esquerda {
+    font-weight: 500;
+    flex: 1;
+  }
+  
+  .item-direita {
+    min-width: 90px;
+    text-align: right;
+    font-weight: bold;
+  }
+  

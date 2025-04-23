@@ -9,9 +9,11 @@ function Home() {
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <Menu /> 
+    <div className="container">
 
+      <div className="body">
       <header className="header">
         <img className="logo" src="/img/logo.png" alt="Logo do Bar do João" />
         <h1> Bar do João </h1>
@@ -30,6 +32,9 @@ function Home() {
       <footer className="footer">
         <p>© 2025 Bar do João. Todos os direitos reservados.</p>
       </footer>
+
+      </div>
+    </div>
     </div>
   );
 }

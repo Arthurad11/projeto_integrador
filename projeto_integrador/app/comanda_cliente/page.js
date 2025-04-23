@@ -34,7 +34,7 @@ function Comanda() {
   
 
   async function buscaPedido(id){
-    console.log(id);
+    
     const response = await axios.get(host+ "/comanda/"+id);
 
     setComanda(response.data);
