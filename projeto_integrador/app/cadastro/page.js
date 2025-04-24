@@ -4,7 +4,7 @@ import axios from 'axios';
 import './cadfunc.css'
 import { useEffect, useState } from 'react';
 import host from '../lib/host';
-import ClienteForm from "@/components/clientes/ClienteForm";
+
 
 
 
