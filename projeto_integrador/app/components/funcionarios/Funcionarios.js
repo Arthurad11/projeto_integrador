@@ -78,6 +78,7 @@ function Funcionarios() {
 								<th>Email</th>
 								<th>Registro</th>
 								<th>Ações</th>
+								
 							</tr>
 						</thead>
 						<tbody>
