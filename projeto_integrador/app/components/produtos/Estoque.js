@@ -95,9 +95,7 @@ function Estoque() {
 									<td>{i.nome}</td>
 									<td>R$ {i.preco.toFixed(2)}</td>
 									<td>
-										<button onClick={() => redirect("/produto/" + i.id)}>
-											<FontAwesomeIcon icon={faEye} />
-										</button>
+										
 										<button onClick={() => montaEdicao(i)}>
 											<FontAwesomeIcon icon={faPenToSquare} />
 										</button>
