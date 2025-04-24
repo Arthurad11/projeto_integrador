@@ -2,7 +2,7 @@ import conexao from "@/app/lib/conexao";
 
 export async function GET(){
 
-    const query = `SELECT * FROM produtos;`;
+    const query = `SELECT * FROM produtos`;
     const [ results ] = await conexao.execute(query);
 
     return new Response(
@@ -17,7 +17,7 @@ export async function GET(){
 export async function POST(request) {
     const body = await request.json();
 
-    const query = `INSERT INTO produtos (nome, id_categoria, preco, imagem) VALUES (?, ?, ?, ?);`;
+    const query = `INSERT INTO produtos (nome, id_categoria, preco, imagem) VALUES (?, ?, ?, ?)`;
 
     const [results] = await conexao.execute(
         query,
