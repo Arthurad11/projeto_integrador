@@ -1,74 +1,69 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from "react"
-import "./funcionarios.css"
-import axios from "axios"
+import { useEffect, useState } from "react";
+import "./funcionarios.css";
+import axios from "axios";
 import { redirect } from "next/navigation";
 import host from "@/app/lib/host";
 
 function Funcionarios() {
+	const [pesquisa, alteraPesquisa] = useState("");
 
-    const [pesquisa, alteraPesquisa] = useState("")
+	const [clientes, alteraClientes] = useState([]);
 
-    const [clientes, alteraClientes] = useState([])
+	const [remover, alteraRemover] = useState([]);
 
-	const [remover, alteraRemover] = useState([])
-
-	
-
-	async function atualizaFUNC(id){
-
+	async function atualizaFUNC(id) {
 		const obj = {
-			funcionario : false
-		}
+			funcionario: false,
+		};
 
-		const response = await axios.put(host+"/funcionarios/"+id, obj)
+		const response = await axios.put(host + "/funcionarios/" + id, obj);
 		buscaTodos();
-		
-
 	}
 
-	
-
-    async function buscaPorID( id ){
-        const response = await axios.get(host+"/funcionarios/"+id)
-        alteraClientes(response.data)
-    }
-
-
-    async function buscaTodos() {
-        const response = await axios.get(host+"/funcionarios")
-        alteraClientes(response.data)
-    }
-
-    function formataData( valor ){
-		let data = valor.split("T")[0]
-		let hora = valor.split("T")[1]
-
-		data = data.split("-")
-		data = data.reverse()
-		data = data.join("/")
-
-		hora = hora.split(".")[0]
-		hora = hora.split(":")
-		hora = hora[0]+":"+hora[1]
-
-		return data+" às "+hora
-
+	async function buscaPorID(id) {
+		const response = await axios.get(host + "/funcionarios/" + id);
+		alteraClientes(response.data);
 	}
 
-    useEffect(()=> {
-        buscaTodos();
-    },[])
+	async function buscaTodos() {
+		const response = await axios.get(host + "/funcionarios");
+		alteraClientes(response.data);
+	}
 
-    return ( 
-        <div className="container-tabela">
+	function formataData(valor) {
+		let data = valor.split("T")[0];
+		let hora = valor.split("T")[1];
+
+		data = data.split("-");
+		data = data.reverse();
+		data = data.join("/");
+
+		hora = hora.split(".")[0];
+		hora = hora.split(":");
+		hora = hora[0] + ":" + hora[1];
+
+		return data + " às " + hora;
+	}
+
+	useEffect(() => {
+		buscaTodos();
+	}, []);
+
+	return (
+		<div className="container-tabela">
 			<div className="funcionarios">
 				<h1>Funcionários</h1>
 				<hr />
 
-				<br/>
+				<br />
 
+				<button className="btn-add" onClick={() => redirect("/cadastro")}>
+					Adicionar Funcionário
+				</button>
+
+				<br />
 				<div className="scroll-tabela">
 					<table className="tabela">
 						<thead>
@@ -89,7 +84,6 @@ function Funcionarios() {
 									<td>{i.email}</td>
 									<td>{formataData(i.registro)}</td>
 									<td className="ferramentas">
-										<button>Editar</button>
 										<button onClick={() => atualizaFUNC(i.id)}>Atualizar</button>
 									</td>
 								</tr>
@@ -99,8 +93,7 @@ function Funcionarios() {
 				</div>
 			</div>
 		</div>
-
-     );
+	);
 }
 
 export default Funcionarios;

@@ -2,7 +2,7 @@ import conexao from "@/app/lib/conexao"
 
 export async function GET (){
 
-    const query = `SELECT * FROM usuarios WHERE funcionario = 1`;
+    const query = `SELECT * FROM usuarios WHERE funcionario = 1 AND admin = 0;`;
     const [results] = await conexao.execute ( query )
 
     return new Response(

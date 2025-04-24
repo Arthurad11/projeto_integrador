@@ -40,3 +40,10 @@
     border-bottom: 1px solid #ddd;
   }
 
+  .btn-add{
+    display: flex;
+    position: relative;
+    margin-left: 800px !important;
+    
+  }
+

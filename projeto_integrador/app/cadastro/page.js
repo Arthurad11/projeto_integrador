@@ -4,8 +4,12 @@ import axios from 'axios';
 import './cadfunc.css'
 import { useEffect, useState } from 'react';
 import host from '../lib/host';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 
 
@@ -55,7 +59,7 @@ function Cadastro() {
                 <div className="conjunto">
                     <button
                         className="botaoVoltarHome"
-                        onClick={() => (window.location.href = "/")}
+                        onClick={() => (window.location.href = "/dashboard")}
                         >
                         <FontAwesomeIcon icon={faArrowLeft} />
                     </button>

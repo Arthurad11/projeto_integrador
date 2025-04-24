@@ -9,7 +9,7 @@ export async function POST(request){
 
     const [results] = await conexao.execute(
         query,
-        [body.nome, body.email, body.senha, false]
+        [body.nome, body.email, body.senha, 0]
     )
 
     return new Response(JSON.stringify(results.insertId) )
