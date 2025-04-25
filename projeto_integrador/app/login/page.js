@@ -2,126 +2,100 @@
 
 import { useState } from "react";
 import "./login.css";
-import Menu from "../components/Menu";
-import axios from "axios";
-import { redirect } from "next/navigation";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 import host from "../lib/host";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from "next/navigation";
 
 function Login() {
+  const router = useRouter();
+
   const [logar, setLogar] = useState(true);
   const [criarConta, setCriarConta] = useState(false);
 
-  // Cadastro
-
-  const [usuario, setUsuario] = useState(""); //usuario
-
-  const [email, setEmail] = useState(""); //email e verifica se email estão iguais
+  const [usuario, setUsuario] = useState("");
+  const [email, setEmail] = useState("");
   const [confirmaEmail, setConfirmaEmail] = useState("");
-
-  const [senha, setSenha] = useState(""); // senha e verifica se as senhas estão iguais
+  const [senha, setSenha] = useState("");
   const [confirmaSenha, setConfirmaSenha] = useState("");
 
-  async function entrar(e){
+  // Função para Login
+  async function entrar(e) {
     e.preventDefault();
 
-    const obj = {
-      email: email,
-      senha: senha
+    const obj = { email, senha };
 
+    try {
+      const response = await axios.post(host + "/usuarios", obj);
+
+      if (response.data.length === 0) {
+        toast.error("Usuário ou senha incorretos");
+        return;
+      }
+
+      const usuarioData = response.data[0];
+      localStorage.setItem("usuario", JSON.stringify(usuarioData));
+
+      if (usuarioData.funcionario === 1 && usuarioData.admin === 0) {
+        router.push("/comanda_garcom");
+      } else if (usuarioData.funcionario === 1 && usuarioData.admin === 1) {
+        router.push("/dashboard");
+      } else if (usuarioData.funcionario === 0 && usuarioData.admin === 0) {
+        router.push("/comanda_cliente");
+      } else {
+        toast.error("Usuário não encontrado");
+      }
+    } catch (error) {
+      toast.error("Erro ao fazer login.");
     }
-
-    const response = await axios.post(host+"/usuarios", obj);
-    
-
-    if(response.data.length == 0){
-      alert("Usuário ou senha incorretos");
-      return;
-    }
-
-    const usuario = JSON.stringify(response.data[0]);
-
-    localStorage.setItem("usuario", usuario);
-
-
-    if (response.data[0].funcionario === 1 && response.data[0].admin === 0) {
-      window.location.href = "/comanda_garcom";
-    } else if (response.data[0].funcionario === 1 && response.data[0].admin === 1) {
-      window.location.href = "/dashboard";
-    } else if (response.data[0].funcionario === 0 && response.data[0].admin === 0) {
-      window.location.href = "/comanda_cliente";
-    } else {
-      alert("Usuário não encontrado");
-    }
-    ;
-
-
   }
 
-  const [logou, setLogou] = useState()
-
-
+  // Função para verificar dados do cadastro
   async function verificaDados(e) {
-
     e.preventDefault();
 
     if (
-      usuario == "" ||
-      email == "" ||
-      confirmaEmail == "" ||
-      senha == "" ||
-      confirmaSenha == ""
+      usuario === "" ||
+      email === "" ||
+      confirmaEmail === "" ||
+      senha === "" ||
+      confirmaSenha === ""
     ) {
-      alert("Preencha todos os campos");
-    } else if (email != confirmaEmail) {
-      alert("Os emails não são iguais");
-    } else if (senha != confirmaSenha) {
-      alert("As senhas não são iguais");
+      toast.warn("Preencha todos os campos");
+    } else if (email !== confirmaEmail) {
+      toast.error("Os emails não são iguais");
+    } else if (senha !== confirmaSenha) {
+      toast.error("As senhas não são iguais");
     } else {
       const obj = {
         nome: usuario,
-        email: email,
-        senha: senha,
+        email,
+        senha,
         funcionario: false,
       };
 
-      try{
-        const response = await axios.post(host+"/login", obj);
+      try {
+        const response = await axios.post(host + "/login", obj);
+        toast.success("Conta criada com sucesso!");
         localStorage.setItem("usuario", JSON.stringify(response.data));
-<<<<<<< Updated upstream
-
-        setLogar(true);
-        setCriarConta(false);
-
-        alert("Cadastro realizado com sucesso");
-        
-=======
-        window.location.href = "/comanda_cliente";
-        setLogou(true)
->>>>>>> Stashed changes
-      }catch{
-        setLogou(false)
+        router.push("/comanda_cliente");
+      } catch (error) {
+        toast.error("Erro ao criar a conta.");
       }
-      
-      
     }
   }
 
   return (
-    
-      <main>
-        
-      
+    <main>
       <div>
-
-      <div>
-        {logar == true && (
+        {logar && (
           <div className="login">
             <button
               className="botaoVoltarHome"
-              onClick={() => (window.location.href = "/")}
+              onClick={() => router.push("/")}
             >
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -131,7 +105,11 @@ function Login() {
             <label>
               Usuário <br />
             </label>
-            <input type="text" placeholder="Usuário" onChange={ (e)=> setEmail(e.target.value) } />
+            <input
+              type="text"
+              placeholder="Usuário"
+              onChange={(e) => setEmail(e.target.value)}
+            />
 
             <br />
             <br />
@@ -139,14 +117,19 @@ function Login() {
             <label>
               Senha <br />
             </label>
-            <input type="password" placeholder="Senha" onChange={(e) => setSenha(e.target.value)}/>
+            <input
+              type="password"
+              placeholder="Senha"
+              onChange={(e) => setSenha(e.target.value)}
+            />
 
             <br />
             <br />
 
-            <button className="enter" onClick={(e) => entrar(e)}>
+            <button className="enter" onClick={entrar}>
               Entrar
             </button>
+
             <button
               className="criarConta"
               onClick={() => {
@@ -156,20 +139,11 @@ function Login() {
             >
               Criar conta
             </button>
-<<<<<<< Updated upstream
-            
-
-=======
-
-            {
-              logou == false && <AlertMessages/>
-            }
->>>>>>> Stashed changes
           </div>
         )}
 
-        {criarConta == true && (
-          <form onSubmit={(e) => verificaDados(e)} className="login">
+        {criarConta && (
+          <form onSubmit={verificaDados} className="login">
             <h1>Cadastro</h1>
 
             <label>
@@ -236,6 +210,7 @@ function Login() {
             <br />
 
             <button className="enter">Cadastrar</button>
+
             <button
               className="criarConta"
               onClick={() => {
@@ -248,15 +223,17 @@ function Login() {
           </form>
         )}
       </div>
-      </div>
-      
-    
 
-    
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="dark"
+      />
     </main>
-    
-        
-   
   );
 }
 
