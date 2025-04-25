@@ -60,6 +60,8 @@ function Login() {
 
   }
 
+  const [logou, setLogou] = useState()
+
 
   async function verificaDados(e) {
 
@@ -88,16 +90,21 @@ function Login() {
       try{
         const response = await axios.post(host+"/login", obj);
         localStorage.setItem("usuario", JSON.stringify(response.data));
+<<<<<<< Updated upstream
 
         setLogar(true);
         setCriarConta(false);
 
         alert("Cadastro realizado com sucesso");
         
+=======
+        window.location.href = "/comanda_cliente";
+        setLogou(true)
+>>>>>>> Stashed changes
       }catch{
-        alert("Erro ao cadastrar");
+        setLogou(false)
       }
-
+      
       
     }
   }
@@ -149,8 +156,15 @@ function Login() {
             >
               Criar conta
             </button>
+<<<<<<< Updated upstream
             
 
+=======
+
+            {
+              logou == false && <AlertMessages/>
+            }
+>>>>>>> Stashed changes
           </div>
         )}
 

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 import host from "../lib/host";
 import axios from "axios";
-import Alert from "../components/Alert";
+import Alert from "../login/components/AlertMessages";
 
 
 
