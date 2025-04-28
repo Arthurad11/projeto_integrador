@@ -5,7 +5,8 @@ import './cadfunc.css'
 import { useEffect, useState } from 'react';
 import host from '../lib/host';
 
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 function Cadastro() {
@@ -45,11 +46,18 @@ function Cadastro() {
                 <div className="logo-wrapper">
                 <img className="logo-img" src="/img/logo.png" alt="Logo do Bar" />
                  </div>
+                  
             {cadastrarFunc && (
 
                 
                 
                 <div className="conjunto">
+                    <button
+                        className="botaoVoltarHome"
+                        onClick={() => (window.location.href = "/dashboard")}
+                        >
+                        <FontAwesomeIcon icon={faArrowLeft} />
+                    </button>
                     <form onSubmit={(e)=> cadastroFuncionario(e)}>
                         <h1 className="titulo">Cadastro de Funcionário</h1>
                         <hr/>

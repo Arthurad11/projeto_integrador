@@ -136,3 +136,10 @@ body{
 
  
 } 
+
+.CadFunc{
+    background: none !important;
+    border: none !important;
+    color: #f8f8ff ;
+    font-size: 13px;
+}

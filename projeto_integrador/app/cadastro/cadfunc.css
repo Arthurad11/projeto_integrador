@@ -98,3 +98,8 @@ body{
     padding-left: 60px;
     
   }
+
+  .botaoVoltarHome{
+    display: flex;
+    left: -200;
+  }
