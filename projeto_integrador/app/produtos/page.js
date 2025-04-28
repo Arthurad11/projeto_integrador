@@ -109,8 +109,7 @@ function Produtos() {
             ))}
           </div>
 
-          <br />
-          <br />
+          
 
           <h2>Chopp</h2>
           <br />
@@ -127,8 +126,7 @@ function Produtos() {
               />
             ))}
           </div>
-          <br />
-          <br />
+          
 
           <h2>Drinks</h2>
           <br />

@@ -60,7 +60,6 @@ function Produto(attr) {
 					</button>
 				</p>
 			</div>
-			<p>{mesa}</p>
 		</div>
 	);
 }

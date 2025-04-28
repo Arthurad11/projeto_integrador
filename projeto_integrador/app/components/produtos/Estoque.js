@@ -74,21 +74,21 @@ function Estoque() {
 								<tr key={i.id}>
 									<td>{i.id}</td>
 									<td>
-										{i.id_categoria === "1"
+										{i.id_categoria == "1"
 											? "Cerveja"
-											: i.id_categoria === "2"
+											: i.id_categoria == "2"
 											? "Chopp"
-											: i.id_categoria === "3"
+											: i.id_categoria == "3"
 											? "Drinks"
-											: i.id_categoria === "4"
+											: i.id_categoria == "4"
 											? "Sucos"
-											: i.id_categoria === "5"
+											: i.id_categoria == "5"
 											? "Refrigerantes"
-											: i.id_categoria === "6"
+											: i.id_categoria == "6"
 											? "Bebidas em geral"
-											: i.id_categoria === "7"
+											: i.id_categoria == "7"
 											? "Porções"
-											: i.id_categoria === "8"
+											: i.id_categoria == "8"
 											? "Espetinhos"
 											: "Cat. Desconhecida"}
 									</td>
