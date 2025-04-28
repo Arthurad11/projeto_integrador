@@ -96,7 +96,7 @@ function Dashboard() {
 							Vendas
 						</li>
 
-						<li
+						{/* <li
 							onClick={() => {
 								alteraHome(false);
 								alteraFaturamento(false);
@@ -106,7 +106,7 @@ function Dashboard() {
 								alteraFuncionarios(false);
 							}}>
 							Clientes
-						</li>
+						</li> */}
 
 						<li
 							onClick={() => {
@@ -136,7 +136,7 @@ function Dashboard() {
 
 					{pedidos == true && <Vendas />}
 
-					{clientes == true && <Clientes />}
+					{/* {clientes == true && <Clientes />} */}
 
 					{funcionarios == true && <Funcionarios />}
 				</main>

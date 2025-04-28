@@ -8,11 +8,10 @@ import axios from "axios";
 import host from "../lib/host";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from "next/navigation";
+
 
 function Login() {
-  const router = useRouter();
-
+  
   const [logar, setLogar] = useState(true);
   const [criarConta, setCriarConta] = useState(false);
 
@@ -40,11 +39,11 @@ function Login() {
       localStorage.setItem("usuario", JSON.stringify(usuarioData));
 
       if (usuarioData.funcionario === 1 && usuarioData.admin === 0) {
-        router.push("/comanda_garcom");
+        window.location.href = "/comanda_garcom";
       } else if (usuarioData.funcionario === 1 && usuarioData.admin === 1) {
-        router.push("/dashboard");
+        window.location.href = "/dashboard";
       } else if (usuarioData.funcionario === 0 && usuarioData.admin === 0) {
-        router.push("/comanda_cliente");
+        window.location.href = "/comanda_cliente";
       } else {
         toast.error("Usuário não encontrado");
       }
@@ -95,7 +94,7 @@ function Login() {
           <div className="login">
             <button
               className="botaoVoltarHome"
-              onClick={() => router.push("/")}
+              onClick={() => (window.location.href = "/")}
             >
               <FontAwesomeIcon icon={faArrowLeft} />
             </button>
@@ -130,7 +129,7 @@ function Login() {
               Entrar
             </button>
 
-            <button
+            {/* <button
               className="criarConta"
               onClick={() => {
                 setLogar(false);
@@ -138,7 +137,7 @@ function Login() {
               }}
             >
               Criar conta
-            </button>
+            </button> */}
           </div>
         )}
 

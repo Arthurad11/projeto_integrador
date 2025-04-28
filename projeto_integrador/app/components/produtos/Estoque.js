@@ -65,7 +65,7 @@ function Estoque() {
 								<th>Produto</th>
 								<th>Preço</th>
 								<th className="ferramentas">
-									Ferramentas / <button onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
+									<button onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
 								</th>
 							</tr>
 						</thead>
@@ -96,11 +96,11 @@ function Estoque() {
 									<td>R$ {i.preco.toFixed(2)}</td>
 									<td>
 										
-										<button onClick={() => montaEdicao(i)}>
+										{/* <button onClick={() => montaEdicao(i)}>
 											<FontAwesomeIcon icon={faPenToSquare} />
-										</button>
-										<button onClick={() => removeProdutos(i.id)}>
-											<FontAwesomeIcon icon={faTrashCan} />
+										</button> */}
+										<button onClick={() => removeProdutos(i.id) } style={{color: "red", padding: "5px"}}>
+											Remover <FontAwesomeIcon icon={faTrashCan} style={{color: "red"}} />
 										</button>
 									</td>
 								</tr>

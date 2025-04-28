@@ -1,10 +1,10 @@
 /* Body e fundo */
 body {
     margin: 0;
-    background-color: #121212; /* Fundo escuro para modernidade */
-    color: #F5F5DC; /* Beige claro para contraste elegante */
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    background-color: #121212 !important; /* Fundo escuro para modernidade */
+    color: #F5F5DC !important; /* Beige claro para contraste elegante */
+    font-family : 'Roboto', sans-serif !important;
+    line-height: 1.6 !important;
 }
 
 /* Container */
@@ -26,10 +26,10 @@ body {
 }
 
 .logo {
-    width: 350px;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 20px;
+    width: 350px !important;
+    height: auto !important;
+    border-radius: 50% !important;
+    margin-bottom: 20px !important;
     transition: transform 0.3s ease;
 }
 
@@ -39,7 +39,7 @@ body {
 
 h1 {
     font-size: 3rem;
-    color: #FFD700; /* Dourado para destaque */
+    color: #FFD700 !important; /* Dourado para destaque */
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 4px;
@@ -48,7 +48,7 @@ h1 {
 }
 
 h1:hover {
-    color: #F5F5DC; /* Muda para bege quando passa o mouse */
+    color: #F5F5DC !important; /* Muda para bege quando passa o mouse */
 }
 
 /* Hero Section */

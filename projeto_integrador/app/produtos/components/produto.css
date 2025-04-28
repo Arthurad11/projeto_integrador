@@ -1,20 +1,79 @@
+body {
+    margin: 0;
+    background-color: #121212 !important; /* Fundo escuro para modernidade */
+    color: #F5F5DC !important; /* Beige claro para contraste elegante */
+    font-family : 'Roboto', sans-serif !important;
+    line-height: 1.6 !important;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #FFD700 !important; /* Dourado para destaque */
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
 .item{
     padding: 30px;
 
     text-align: center;
     align-content: center;
 
-    border: 1px solid #f0f0f0; 
+    border: 2px solid #555555; 
     border-radius: 8px;
 
     margin: 20px;
 
     width: 300px;
 
+    background-color: #121212;
+
 }
 
 .item:hover{
-    border: 1px solid #cfcfcf;
+    border: 2px solid #cfcfcf;
     transition: 0.5s;
 }
 
+.botao-qntd{
+    background: none !important;
+    border: none !important;
+    color: rgb(88, 206, 84) ;
+
+    cursor: pointer;
+}
+
+
+.btn-compra{
+    border: none;
+    background-color: rgb(88, 206, 84);
+    color: white;
+    padding: 8px;
+    
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.btn-compra:hover{
+    background-color: rgb(43, 119, 39) !important;
+    cursor: pointer;
+}
+
+.preco{
+    padding-bottom: 10px;
+}
+
+select{
+    background-color: rgb(44, 44, 44) !important;
+    border: rgb(44, 44, 44);
+    color: #f0f0f0;
+
+    padding: 8px;
+    border-radius: 6px;
+
+    cursor: pointer;
+}

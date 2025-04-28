@@ -4,12 +4,12 @@ body{
 
     display: flexbox;
 
-    background-color: white;
-    color: #000000;
+    background-color: white !important;
+    color: #000000 !important;
 }
 
 h1{
-    color: #000;
+    color: #000 !important;
 }
 
 aside{

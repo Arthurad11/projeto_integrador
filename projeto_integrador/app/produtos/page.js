@@ -100,6 +100,7 @@ function Produtos() {
             {cerveja?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -118,6 +119,7 @@ function Produtos() {
             {chopp?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -135,6 +137,7 @@ function Produtos() {
             {drinks?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -150,6 +153,7 @@ function Produtos() {
             {sucos?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -165,6 +169,7 @@ function Produtos() {
             {refrigerantes?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -180,6 +185,7 @@ function Produtos() {
             {bebidas?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -195,6 +201,7 @@ function Produtos() {
             {espetinhos?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
@@ -210,6 +217,7 @@ function Produtos() {
             {porcoes?.map((i) => (
               <Produto
                 key={i.nome}
+                id={i.id}
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}

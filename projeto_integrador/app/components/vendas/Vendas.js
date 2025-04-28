@@ -73,7 +73,6 @@ function Vendas() {
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>ID do Cliente</th>
 								<th>ID do Produto</th>
 								<th>Quantidade</th>
 								<th>Mesa</th>
@@ -85,12 +84,11 @@ function Vendas() {
 							{vendas.map((i) => (
 								<tr key={i.id}>
 									<td>{i.id}</td>
-									<td>{i.id_cliente}</td>
 									<td>{i.id_produto}</td>
 									<td>{i.quantidade}</td>
 									<td>{i.mesa}</td>
 									<td>{formataData(i.data)}</td>
-									<td>{i.finalizado === "0" ? "Não finalizado 💬" : "Finalizado ✅"}</td>
+									<td>{i.finalizado == 0 ? "Não finalizado ⛔" : "Finalizado ✅"}</td>
 								</tr>
 							))}
 						</tbody>
