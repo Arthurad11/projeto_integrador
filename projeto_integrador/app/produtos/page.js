@@ -104,7 +104,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -122,7 +121,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -139,7 +137,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -155,7 +152,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -171,7 +167,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -187,7 +182,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -203,7 +197,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>
@@ -219,7 +212,6 @@ function Produtos() {
                 nome={i.nome}
                 preco={i.preco.toFixed(2)}
                 imagem={`${i.imagem}`}
-				// funcao={mandaProdutos()}
               />
             ))}
           </div>

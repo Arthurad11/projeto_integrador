@@ -22,6 +22,8 @@ function Produto(attr) {
 
 		const response = await axios.post(host + "/vendas/", obj);
 
+		alert("Enviado para a comanda da mesa" + mesa)
+
 	}
 
 	return (
