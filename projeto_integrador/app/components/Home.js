@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-import Funcionarios from "./funcionarios/Funcionarios";
+
+import "./home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartArrowDown, faMoneyBillTrendUp } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import host from "../lib/host";
+
 
 function Home() {
 	// Dados para o gráfico de faturamento mensal
@@ -34,31 +40,54 @@ function Home() {
 			title: "Valor", // Eixo vertical (valor numérico)
 		},
 	};
+
+	const [ vendas, setVendas ] = useState()
+	async function pegaVendas() {
+		const response = await axios.get(host + "/vendas/dash")
+		setVendas(response.data.length)
+	}
+
+	const [ faturamento, setFaturamento ] = useState()
+	async function pegaFaturamento() {
+		const response = await axios.get(host + "/faturamento")
+	}
+
+
+	const [ nome, setNome ] = useState("")
+	function pegaUser() {
+		const usuarioString = localStorage.getItem("usuario");
+	
+		if (usuarioString) {
+			const usuario = JSON.parse(usuarioString); 
+			setNome(usuario.nome); 
+		}
+
+
+	}
+
+	useEffect( () => {
+		pegaUser()
+		pegaVendas()
+	},[])
+
 	return (
 		<div>
-			<h1>Resumo</h1>
-			<div>
-				{/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
-				<div className="chart-row">
-					{/* Gráfico de faturamento mensal */}
-					<div className= "chart-container" >
+			<h1>Bem vindo(a) {nome}</h1>
+			<main>
 
-						<h3>Gráfico de Faturamento Mensal</h3>
-						<Chart   chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
-
-					
-
-					</div>
-
-					{/* Gráfico de vendas mensal */}
-					<div className="chart-container">
-						<h3>Gráfico de Vendas Mensal</h3>
-						<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
-					</div>
-
-					
+				<div className="card">
+					<h3>Vendas realizadas hoje:</h3>
+					<p><FontAwesomeIcon icon={faCartArrowDown} /></p>
+					<p>{vendas}</p>
 				</div>
-			</div>
+
+				<div className="card">
+					<h3>Faturamento</h3>
+					<p><FontAwesomeIcon icon={faMoneyBillTrendUp} /></p>
+					<p>6464654464</p>
+				</div>
+
+			</main>
 		</div>
 	);
 }

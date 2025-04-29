@@ -13,9 +13,6 @@ export async function GET() {
 export async function POST(request) {
 	const body = await request.json();
 
-	console.log("#####################################################");
-	console.log(body);
-
 	//const query = `INSERT INTO vendas JOIN produtos ON vendas.id_produto = produtos.id (id_produto, quantidade, mesa, finalizado) VALUES (?, ?, ?, ?)`;
 	const query = `INSERT INTO vendas (id_produto, quantidade, mesa, finalizado) VALUES (?, ?, ?, ?)`;
 
