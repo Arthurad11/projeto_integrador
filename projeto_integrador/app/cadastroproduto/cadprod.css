@@ -1,84 +1,145 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+body {
+  margin: 0;
+  padding: 0;
 
-body{
+  justify-content: center;
+  align-items: center;
 
-    margin: 80px;
-    padding: 0;
+  font-family: "Open Sans", sans-serif;
 
-    justify-content: center;
-    align-items: center;
+  background-color: black;
+  color: #f8f8ff;
 
-    font-family: "Open Sans"; 
-
-    background-color: black;
-    color: #f8f8ff;
-
-    display: flex;
-    height: 100vh;
-
-}
-.conjunto{
-    width: 600px;
-    color: #f8f8ff;
-    text-align: center;
-    background: #333;
-    margin-left: 25px;
-    margin-right: 25px; 
-    padding: 20px;
-    box-shadow: 2px 3px 4px #444 ;
-    border-radius: 15px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-    
+  display: flex;
+  height: 100vh;
 }
 
-.titulo{
-    margin-top: 40px;
-    font-size: 30px;
-    text-align: center;
+.login {
+  background-color: #333;
 
+  width: 300px;
+
+  margin-left: 25px;
+  margin-right: 25px;
+
+  padding: 20px;
+
+  /* align-items: center; */
+  text-align: center;
+
+  border-radius: 10px;
 }
 
-.conjunto p{
-
-    text-align: center;
-    margin-left: -30px;
-    margin-top: 50px;
+.login h1 {
+  text-align: center;
 }
 
-.conjunto input{
-    margin-left: -30px;
-    margin-top: -80px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    width: 100%;
-    border-radius: 10px;
-    margin: 0 auto;
-    text-align: center;
-    align-items: center;
+.login label {
+  display: flex;
 }
 
-.botao{
+.login input {
+  display: flex;
+  margin: 0 auto;
 
-    border: none;
-    background-color: rgb(152, 247, 10);
-    margin-top: 0px;
-    padding: 10px;
-    box-shadow: 1px 2px 3px black;
-    border-radius: 10px;
-    font-size: 20px;
+  margin-bottom: -10px;
+  width: 100%;
+
+  border: none;
+  border-radius: 10px;
+
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  text-indent: 15px;
 }
 
-.botao:hover{
-    background: rgb(50, 148, 25);
-    transition: 0.3s;
+.login button {
+  margin: 0 auto;
+  align-items: center;
+
+  padding: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  width: 80%;
+
+  margin-bottom: 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: rgb(0, 0, 0);
+
+  color: #f8f8ff;
+
+  cursor: pointer;
 }
 
-.button{
-    background-color: black;
-    color: white;
-    border-radius: 5px;
-    padding: 5px;
-    box-shadow: 1px 2px 3px black;
+.login button:hover {
 }
 
+.criarConta {
+  background: none !important;
+  border: none !important;
+  color: #f8f8ff;
+}
+
+@media screen and (min-width: 600px) {
+  .login {
+    transform: scale(1.3);
+  }
+}
+
+/* .botaoVoltarHome{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding:0;
+
+} */
+
+.botaoVoltarHome {
+  position: absolute !important;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px !important;
+  font-size: 12px !important;
+  width: auto !important;
+  height: auto !important;
+  z-index: 9999; /* garante que fique por cima */
+}
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  color: white;
+  font-size: 0.9rem;
+
+  position: absolute;
+
+  bottom: 200px;
+
+  display: flex;
+}
+
+.CadFunc {
+  background: none !important;
+  border: none !important;
+  color: #f8f8ff;
+  font-size: 13px;
+}
+
+.catpad {
+  padding: 5px;
+}
+
+.caixacategoria {
+  padding: 7px 75px 7px 60px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.fimpad {
+  margin-bottom: 25px;
+}
