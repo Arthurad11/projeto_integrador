@@ -26,7 +26,7 @@ function Cadastro() {
         const obj = {
             nome: nome,
             email: email,
-            senha: senha,
+            senha: senha, 
             funcionario: funcionario
         };
 
@@ -61,14 +61,17 @@ function Cadastro() {
                     <form onSubmit={(e)=> cadastroFuncionario(e)}>
                         <h1 className="titulo">Cadastro de Funcionário</h1>
                         <hr/>
-                        <p>Nome Completo:</p>
+                        <br/>
+
+                        <p className="padInicial" >Nome Completo:</p>
                         <input
                             placeholder="Digite seu nome aqui..."
                             value={nome}
                             onChange={(e) => setNome(e.target.value)}
                         />
+                        <br/><br/>
 
-                        <p>Email:</p>
+                        <p className="padInicial" >Email:</p>
                         <input
                             placeholder="Digite seu email..."
                             value={email}
@@ -77,7 +80,7 @@ function Cadastro() {
 
                         <br/><br/>
 
-                        <p>Senha:</p>
+                        <p className="padInicial" >Senha:</p>
                         <input
                             placeholder="Digite sua senha aqui..."
                             type="password"
@@ -85,9 +88,9 @@ function Cadastro() {
                             onChange={(e) => setSenha(e.target.value)}
                         />
 
-                        <br/><br/>
-
-                        <button type="submit" className="botao">
+                        <br/><br/><br/>
+                        
+                        <button type="submit" className="botaoCadastrar">
                             Cadastrar
                         </button>
 
