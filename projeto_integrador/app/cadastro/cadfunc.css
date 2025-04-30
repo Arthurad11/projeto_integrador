@@ -10,14 +10,14 @@ body{
 
     font-family: "Open Sans"; 
 
-    background-color: black;
+    background-color: black !important;
     color: #f8f8ff;
 
     display: flex;
     height: 100vh;
 
 }
-.conjunto{
+.tela_cadastro .conjunto{
 
     width: 300px;
 
@@ -35,20 +35,20 @@ body{
     
 }
 
-.titulo{
+.tela_cadastro .titulo{
     font-size: 20px;
     text-align: center;
 
 }
 
-.conjunto p{
+.tela_cadastro .conjunto p{
 
     text-align: center;
     margin-left: -30px;
     margin-top: 50px;
 }
 
-.conjunto input{
+.tela_cadastro .conjunto input{
     margin-left: -30px;
     margin-top: -80px;
     padding-top: 7px;
@@ -71,17 +71,17 @@ body{
     font-size: 20px;
 }
 
-.botao:hover{
+.tela_cadastro .botao:hover{
     background: rgb(50, 148, 25);
     transition: 0.3s;
 }
 
-.botaoAlterar{
+.tela_cadastro .botaoAlterar{
     background: #333;
     border: none;
     color: #f8f8ff;
 }
-.logo-wrapper {
+.tela_cadastro .logo-wrapper {
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -89,7 +89,7 @@ body{
 
     
   }
-  .logo-img {
+  .tela_cadastro .logo-img {
     width: 300px;
     height: 300px;
     object-fit: contain;
@@ -99,7 +99,7 @@ body{
     
   }
 
-  .botaoVoltarHome{
+  .tela_cadastro .botaoVoltarHome{
     display: flex;
     left: -200;
   }

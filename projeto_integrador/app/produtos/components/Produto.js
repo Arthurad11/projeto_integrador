@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./produto.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus, faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -13,7 +13,6 @@ function Produto(attr) {
 	const [mesa, setMesa] = useState(1);
 
 	async function mandaVenda() {
-
 		const obj = {
 			id_produto: attr.id,
 			quantidade: quantidade,
@@ -22,10 +21,16 @@ function Produto(attr) {
 
 		const response = await axios.post(host + "/vendas/", obj);
 
-		alert("Enviado para a comanda da mesa " + mesa)
-
+		alert("Enviado para a comanda da mesa " + mesa);
 	}
 
+	const [logado, setlogado] = useState(false);
+
+	useEffect(() => {
+		if (localStorage.getItem("usuario") != null) {
+			setlogado(true);
+		}
+	}, []);
 	return (
 		<div>
 			<div className="item">
@@ -37,30 +42,33 @@ function Produto(attr) {
 				<p className="preco">
 					<strong>R$ {attr.preco}</strong>
 				</p>
-				<p>
-					<select onChange={(e) => setMesa(e.target.value)}>
-						<option value={1}>Mesa 1</option>
-						<option value={2}>Mesa 2</option>
-						<option value={3}>Mesa 3</option>
-						<option value={4}>Mesa 4</option>
-						<option value={5}>Mesa 5</option>
-						<option value={6}>Mesa 6</option>
-						<option value={7}>Mesa 7</option>
-						<option value={8}>Mesa 8</option>
-						<option value={9}>Mesa 9</option>
-						<option value={10}>Mesa 10</option>
-					</select>
-					<button className="botao-qntd" onClick={() => setQuantidade(quantidade - 1)}>
-						<FontAwesomeIcon icon={faMinus} width={30} />
-					</button>
-					{quantidade}
-					<button className="botao-qntd" onClick={() => setQuantidade(quantidade + 1)}>
-						<FontAwesomeIcon icon={faPlus} width={30} />
-					</button>
-					<button className="btn-compra" onClick={() => mandaVenda()}>
-						Adicionar
-					</button>
-				</p>
+				{
+				logado == true &&
+					<p>
+						<select onChange={(e) => setMesa(e.target.value)}>
+							<option value={1}>Mesa 1</option>
+							<option value={2}>Mesa 2</option>
+							<option value={3}>Mesa 3</option>
+							<option value={4}>Mesa 4</option>
+							<option value={5}>Mesa 5</option>
+							<option value={6}>Mesa 6</option>
+							<option value={7}>Mesa 7</option>
+							<option value={8}>Mesa 8</option>
+							<option value={9}>Mesa 9</option>
+							<option value={10}>Mesa 10</option>
+						</select>
+						<button className="botao-qntd" onClick={() => setQuantidade(quantidade - 1)}>
+							<FontAwesomeIcon icon={faMinus} width={30} />
+						</button>
+						{quantidade}
+						<button className="botao-qntd" onClick={() => setQuantidade(quantidade + 1)}>
+							<FontAwesomeIcon icon={faPlus} width={30} />
+						</button>
+						<button className="btn-compra" onClick={() => mandaVenda()}>
+							Adicionar
+						</button>
+					</p>
+				}
 			</div>
 		</div>
 	);

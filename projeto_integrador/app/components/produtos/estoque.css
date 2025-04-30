@@ -41,6 +41,16 @@
   
   .remover {
     text-align: center;
+    background-color: red;
+
+    border-radius: 8px;
+    border: none;
+
+    cursor: pointer;
+  }
+
+  .remover:hover {
+    background-color: rgb(133, 0, 0);
   }
   
   .botaoremover {
@@ -68,5 +78,20 @@
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+  }
+
+  .add-btn{
+    padding:7px;
+    color: white;
+    background-color: rgb(0, 17, 255);
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+  }
+
+  .add-btn:hover{
+    background-color: rgb(0, 9, 129);
   }
   

@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faMagnifyingGlass, faPenToSquare, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import "./estoque.css";
 
@@ -48,7 +48,7 @@ function Estoque() {
 				<div>
 					<p>Pesquisar produto:</p>
 					<input type="text" placeholder="Digite o nome ou ID" onChange={(e) => alteraPesquisa(e.target.value)} />
-					<button onClick={() => buscaPorId(pesquisa)}>Pesquisar</button>
+					<button onClick={() => buscaPorId(pesquisa)}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
 				</div>
 
 				<br/>
@@ -65,7 +65,7 @@ function Estoque() {
 								<th>Produto</th>
 								<th>Preço</th>
 								<th className="ferramentas">
-									<button onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
+									<button className="add-btn"  onClick={() => redirect("/cadastroproduto/")}>Adicionar produto</button>
 								</th>
 							</tr>
 						</thead>
@@ -99,8 +99,8 @@ function Estoque() {
 										{/* <button onClick={() => montaEdicao(i)}>
 											<FontAwesomeIcon icon={faPenToSquare} />
 										</button> */}
-										<button onClick={() => removeProdutos(i.id) } style={{color: "red", padding: "5px"}}>
-											Remover <FontAwesomeIcon icon={faTrashCan} style={{color: "red"}} />
+										<button className="remover" onClick={() => removeProdutos(i.id) } style={{color: "white", padding: "7px"}}>
+											Remover <FontAwesomeIcon icon={faTrashCan} style={{color: "white"}} />
 										</button>
 									</td>
 								</tr>
