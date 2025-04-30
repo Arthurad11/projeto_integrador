@@ -49,7 +49,8 @@ function Home() {
 
 	const [ faturamento, setFaturamento ] = useState()
 	async function pegaFaturamento() {
-		const response = await axios.get(host + "/faturamento")
+		const response = await axios.get(host + "/faturamento");
+		setFaturamento(response.data.total); 
 	}
 
 
@@ -68,26 +69,33 @@ function Home() {
 	useEffect( () => {
 		pegaUser()
 		pegaVendas()
+		pegaFaturamento();
 	},[])
 
 	return (
 		<div>
 			<h1>Bem vindo(a) {nome}</h1>
-			<main>
+			<div className="container">
 
 				<div className="card">
 					<h3>Vendas realizadas hoje:</h3>
-					<p><FontAwesomeIcon icon={faCartArrowDown} /></p>
-					<p>{vendas}</p>
+					<FontAwesomeIcon icon={faCartArrowDown} className="icone"/>
+					<h2><strong>{vendas !== undefined ? `${vendas}` : "0"}</strong></h2>
 				</div>
 
 				<div className="card">
 					<h3>Faturamento</h3>
-					<p><FontAwesomeIcon icon={faMoneyBillTrendUp} /></p>
-					<p>6464654464</p>
+					<FontAwesomeIcon icon={faMoneyBillTrendUp} className="icone"/>
+					<h2><strong>{faturamento !== undefined ? `R$ ${faturamento.toFixed(2)}` : "R$ 0.00"}</strong></h2>
 				</div>
 
-			</main>
+				<div className="card" onClick={() => window.location.href = "/comanda_garcom"} style={{cursor: "pointer"}} >
+					<h3>Comandas</h3>
+					<p>Clique Aqui para Ver as Comandas</p>
+					
+				</div>
+
+			</div>
 		</div>
 	);
 }
