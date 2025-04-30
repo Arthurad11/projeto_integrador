@@ -74,6 +74,29 @@ function PainelGarcom() {
 					<div className="card__email">{usuario.email}</div>
 					<div className="card__garcom">Garçom</div>
 				</div>
+				{/* Exibir Comanda Visualizada */}
+				{comanda.length > 0 && (
+					<div className="comanda-card">
+						<h3>Comanda da Mesa {mesa}</h3>
+						<ul>
+							{comanda.map((i, index) => (
+								<li key={index} className="comanda-item">
+									<span className="item-esquerda">
+										{i.nome} ({i.quantidade}x)
+									</span>
+									<span className="item-direita">R$ {(i.preco * i.quantidade).toFixed(2)}</span>
+								</li>
+							))}
+						</ul>
+
+						<p>
+							<strong>Total:</strong> R$ {total.toFixed(2)}
+						</p>
+						<button className="button_finalizar" onClick={finalizarComanda}>
+							Finalizar Comanda
+						</button>
+					</div>
+				)}
 			</div>
 
 			{/* Painel de Comandas */}
@@ -93,30 +116,6 @@ function PainelGarcom() {
 							</div>
 						))}
 					</div>
-
-					{/* Exibir Comanda Visualizada */}
-					{comanda.length > 0 && (
-						<div className="comanda-card">
-							<h3>Comanda da Mesa {mesa}</h3>
-							<ul>
-								{comanda.map((i, index) => (
-									<li key={index} className="comanda-item">
-										<span className="item-esquerda">
-											{i.nome} ({i.quantidade}x)
-										</span>
-										<span className="item-direita">R$ {(i.preco * i.quantidade).toFixed(2)}</span>
-									</li>
-								))}
-							</ul>
-
-							<p>
-								<strong>Total:</strong> R$ {total.toFixed(2)}
-							</p>
-							<button className="button_finalizar" onClick={finalizarComanda}>
-								Finalizar Comanda
-							</button>
-						</div>
-					)}
 
 					{/* Botão Voltar */}
 					<div className="button-container">

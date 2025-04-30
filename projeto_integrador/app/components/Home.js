@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart } from "react-google-charts";
-import Funcionarios from "./funcionarios/Funcionarios";
+
+import "./home.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartArrowDown, faMoneyBillTrendUp } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import host from "../lib/host";
+
 
 function Home() {
 	// Dados para o gráfico de faturamento mensal
@@ -34,30 +40,61 @@ function Home() {
 			title: "Valor", // Eixo vertical (valor numérico)
 		},
 	};
+
+	const [ vendas, setVendas ] = useState()
+	async function pegaVendas() {
+		const response = await axios.get(host + "/vendas/dash")
+		setVendas(response.data.length)
+	}
+
+	const [ faturamento, setFaturamento ] = useState()
+	async function pegaFaturamento() {
+		const response = await axios.get(host + "/faturamento");
+		setFaturamento(response.data.total); 
+	}
+
+
+	const [ nome, setNome ] = useState("")
+	function pegaUser() {
+		const usuarioString = localStorage.getItem("usuario");
+	
+		if (usuarioString) {
+			const usuario = JSON.parse(usuarioString); 
+			setNome(usuario.nome); 
+		}
+
+
+	}
+
+	useEffect( () => {
+		pegaUser()
+		pegaVendas()
+		pegaFaturamento();
+	},[])
+
 	return (
 		<div>
-			<h1>Resumo</h1>
-			<div>
-				{/* Primeira linha de gráficos (faturamento mensal e vendas mensal) */}
-				<div className="chart-row">
-					{/* Gráfico de faturamento mensal */}
-					<div className= "chart-container" >
+			<h1>Bem vindo(a) {nome}</h1>
+			<div className="container">
 
-						<h3>Gráfico de Faturamento Mensal</h3>
-						<Chart   chartType="Bar" width="100%" height="300px" data={graficoFaturamentoMensalData} options={options} />
+				<div className="card">
+					<h3>Vendas realizadas hoje:</h3>
+					<FontAwesomeIcon icon={faCartArrowDown} className="icone"/>
+					<h2><strong>{vendas !== undefined ? `${vendas}` : "0"}</strong></h2>
+				</div>
 
-					
+				<div className="card">
+					<h3>Faturamento</h3>
+					<FontAwesomeIcon icon={faMoneyBillTrendUp} className="icone"/>
+					<h2><strong>{faturamento !== undefined ? `R$ ${faturamento.toFixed(2)}` : "R$ 0.00"}</strong></h2>
+				</div>
 
-					</div>
-
-					{/* Gráfico de vendas mensal */}
-					<div className="chart-container">
-						<h3>Gráfico de Vendas Mensal</h3>
-						<Chart chartType="Bar" width="100%" height="300px" data={graficoVendasMensalData} options={options} />
-					</div>
-
+				<div className="card" onClick={() => window.location.href = "/comanda_garcom"} style={{cursor: "pointer"}} >
+					<h3>Comandas</h3>
+					<p>Clique Aqui para Ver as Comandas</p>
 					
 				</div>
+
 			</div>
 		</div>
 	);

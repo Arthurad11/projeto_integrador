@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+}
+
+h1{
+    color: black !important;
+
+    position: relative;
+
+    bottom:110px;
+    
+}
+
+h1:hover{
+    color: black !important;
+}
+
+.card{
+
+    display:flex;
+    flex-direction: column;
+
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    
+    
+
+    
+
+    border: 2px solid #eeeeee;
+    border-radius: 8px;
+
+    width: 250px;
+    height: 250px;
+    
+    padding: 20px;
+
+    margin: 30px;
+}
+
+h3{
+    margin:5px;
+    margin-bottom: 20px;
+}
+
+p{
+    margin: 5px;
+}
+
+.icone{
+    font-size: 25px;
+}
