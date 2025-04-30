@@ -94,4 +94,24 @@
   .add-btn:hover{
     background-color: rgb(0, 9, 129);
   }
+
+  .pesquisa{
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .pesquisa-btn{
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
   
+  .pesquisa{
+    border: 1px solid black !important;
+    border: black;
+  }
+
+  .pesquisa-btn{
+    border:none;
+    background-color: white;
+  }

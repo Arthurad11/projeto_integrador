@@ -47,8 +47,8 @@ function Estoque() {
 
 				<div>
 					<p>Pesquisar produto:</p>
-					<input type="text" placeholder="Digite o nome ou ID" onChange={(e) => alteraPesquisa(e.target.value)} />
-					<button onClick={() => buscaPorId(pesquisa)}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
+					<input className="pesquisa" type="text" placeholder="Digite o nome ou ID" onChange={(e) => alteraPesquisa(e.target.value)} />
+					<button className="pesquisa-btn" onClick={() => buscaPorId(pesquisa)}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
 				</div>
 
 				<br/>
