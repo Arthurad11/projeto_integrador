@@ -7,8 +7,8 @@ body {
 
   font-family: "Open Sans", sans-serif;
 
-  background-color: black;
-  color: #f8f8ff;
+  background-color: black !important;
+  color: #f8f8ff !important;
 
   display: flex;
   height: 100vh;
@@ -16,6 +16,10 @@ body {
 
 .login {
   background-color: #333;
+
+  font-size: 20px !important;
+
+  color: #f8f8ff !important;
 
   width: 300px;
 

@@ -42,7 +42,10 @@ function Cadastro() {
 
     return ( 
         
-        <div>
+        <div className='tela_cadastro'>
+                <div className="logo-wrapper">
+                <img className="logo-img" src="/img/logo.png" alt="Logo do Bar" />
+                 </div>
                   
             {cadastrarFunc && (
 

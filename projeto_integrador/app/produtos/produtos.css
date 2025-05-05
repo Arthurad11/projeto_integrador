@@ -18,8 +18,8 @@ h1{
     flex-wrap: wrap;
     justify-content: center;
 
-    margin-left: 400px;
-    margin-right: 400px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 img{
@@ -27,7 +27,7 @@ img{
 }
 
 
-@media screen and (max-width: 999px){
+@media screen and (max-width: 789px){
     .produtos{
         padding: 40px;
     }

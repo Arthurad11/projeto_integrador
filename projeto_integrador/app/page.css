@@ -1,159 +1,161 @@
 /* Body e fundo */
 body {
-    margin: 0;
-    background-color: #121212 !important; /* Fundo escuro para modernidade */
-    color: #F5F5DC !important; /* Beige claro para contraste elegante */
-    font-family : 'Roboto', sans-serif !important;
-    line-height: 1.6 !important;
+	margin: 0;
+	background-color: #121212 !important; /* Fundo escuro para modernidade */
+	color: #f5f5dc !important; /* Beige claro para contraste elegante */
+	font-family: "Roboto", sans-serif !important;
+	line-height: 1.6 !important;
 }
 
 /* Container */
 .container {
-    padding: 0px;
-    
-    padding-top: 8dvh;
+	padding: 0px;
+
+	padding-top: 8dvh;
 }
-
-
 
 /* Header com logo e título */
 .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px 0;
+	text-align: center;
 }
 
 .logo {
-    width: 350px !important;
-    height: auto !important;
-    border-radius: 50% !important;
-    margin-bottom: 20px !important;
-    transition: transform 0.3s ease;
+	width: 350px !important;
+	height: auto !important;
+	border-radius: 50% !important;
+	margin-bottom: 20px !important;
+	transition: transform 0.3s ease;
 }
 
 .logo:hover {
-    transform: rotate(360deg); /* Logo gira ao passar o mouse */
+	transform: rotate(360deg); /* Logo gira ao passar o mouse */
 }
 
 h1 {
-    font-size: 3rem;
-    color: #FFD700 !important; /* Dourado para destaque */
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 4px;
-    margin-top: 10px;
-    transition: color 0.3s ease;
+	font-size: 3rem;
+	color: #ffd700 !important; /* Dourado para destaque */
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 4px;
+	margin-top: 10px;
+	transition: color 0.3s ease;
 }
 
 h1:hover {
-    color: #F5F5DC !important; /* Muda para bege quando passa o mouse */
+	color: #f5f5dc !important; /* Muda para bege quando passa o mouse */
 }
 
 /* Hero Section */
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 60px 0;
-    animation: fadeInUp 1.5s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 60px 0;
+	animation: fadeInUp 1.5s ease;
 }
 
 /* Card central */
 .card-uiverse {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
-    box-shadow: 0 6px 50px rgba(0, 0, 0, 0.9);
-    border-radius: 15px;
-    padding: 40px;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    color: #F5F5DC;
-    transition: all 0.3s ease;
-    animation: fadeInUp 1s ease;
+	background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85));
+	box-shadow: 0 6px 50px rgba(0, 0, 0, 0.9);
+	border-radius: 15px;
+	padding: 40px;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
+	color: #f5f5dc;
+	transition: all 0.3s ease;
+	animation: fadeInUp 1s ease;
 }
 
 .card-uiverse:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
+	transform: scale(1.05);
+	box-shadow: 0 10px 60px rgba(0, 0, 0, 0.8);
 }
 
 .card-uiverse h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 15px;
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 15px;
 }
 
 .card-uiverse p {
-    color: #d3cfc4;
-    font-size: 1rem;
-    margin-top: 10px;
+	color: #d3cfc4;
+	font-size: 1rem;
+	margin-top: 10px;
 }
 
 /* Ícone de cerveja */
 .beer-icon img {
-    width: 100px;
-    animation: bounce 2s infinite ease-in-out;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
+	width: 100px;
+	animation: bounce 2s infinite ease-in-out;
+	margin-bottom: 15px;
+	transition: transform 0.3s ease;
 }
 
 .beer-icon img:hover {
-    transform: rotate(20deg); /* Aumento da rotação ao passar o mouse */
+	transform: rotate(20deg); /* Aumento da rotação ao passar o mouse */
 }
 
 /* Footer */
 .footer {
-    text-align: center;
-    padding: 30px 0;
-    font-size: 1rem;
-    color: #888;
-    margin-top: auto;
+	text-align: center;
+	padding: 30px 0;
+	font-size: 1rem;
+	color: #888;
+	margin-top: auto;
 }
 
 @keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-15px);
-    }
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-15px);
+	}
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .header {
-        padding: 20px 0;
-    }
+	.header {
+		padding: 20px 0;
+	}
 
-    h1 {
-        font-size: 2.2rem;
-    }
+	h1 {
+		font-size: 2.2rem;
+	}
 
-    .card-uiverse {
-        padding: 30px;
-        width: 100%;
-    }
+	.card-uiverse {
+		padding: 30px;
+		width: 100%;
+	}
 
-    .beer-icon img {
-        width: 80px;
-    }
+	.beer-icon img {
+		width: 80px;
+	}
 }
 /* Player de áudio escondido */
 audio {
-    display: none;
+	display: none;
 }
 
+nextjs-portal {
+	display: none;
+}

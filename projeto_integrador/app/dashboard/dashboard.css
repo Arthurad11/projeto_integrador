@@ -1,4 +1,4 @@
-body{
+body .tela_dashboard{
     margin: 0;
     padding: 0;
 
@@ -8,11 +8,11 @@ body{
     color: #000000 !important;
 }
 
-h1{
+.tela_dashboard h1{
     color: #000 !important;
 }
 
-aside{
+.tela_dashboard aside{
     
 
     border-right: 1px solid rgb(187, 187, 187);
@@ -21,7 +21,7 @@ aside{
     height: 92vh;
 }
 
-aside ul{
+.tela_dashboard aside ul{
     display: flex;
     list-style: none;
 
@@ -31,7 +31,7 @@ aside ul{
     
 }
 
-aside ul li{
+.tela_dashboard aside ul li{
 
     padding: 10px;
 
@@ -42,7 +42,7 @@ aside ul li{
 }
 
 
-.first{
+.tela_dashboard .first{
     padding-top: 50px;
 }
 
@@ -51,7 +51,7 @@ aside ul li{
         overflow-x: hidden;
     }
 
-    aside{
+    .tela_dashboard aside{
         display: none;
     }
 }
@@ -67,11 +67,11 @@ aside ul li{
     }
 }
 
-.login{
+.tela_dashboard .login{
     order: -1;
 }
 
-nav{
+.tela_dashboard nav{
     
     display: flex;
 
@@ -85,18 +85,18 @@ nav{
     color:aliceblue;
 }
 
-.deslogar{
+.tela_dashboard .deslogar{
     background: transparent;
     border: none;
 
     color: red;
 }
 
-img{
+.tela_dashboard img{
     color: red;
 }
 
-.container{
+.tela_dashboard .container{
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -106,7 +106,7 @@ img{
     
 }
 
-main{
+.tela_dashboard main{
     margin: 0;
     padding: 0;
 
@@ -126,7 +126,7 @@ main{
     
 }
 
-.imagemSair{
+.tela_dashboard .imagemSair{
     width: 12px;
     height: 12px;
 }

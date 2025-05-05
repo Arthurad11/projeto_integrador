@@ -41,6 +41,16 @@
   
   .remover {
     text-align: center;
+    background-color: red;
+
+    border-radius: 8px;
+    border: none;
+
+    cursor: pointer;
+  }
+
+  .remover:hover {
+    background-color: rgb(133, 0, 0);
   }
   
   .botaoremover {
@@ -69,4 +79,39 @@
     text-align: left;
     border-bottom: 1px solid #ddd;
   }
+
+  .add-btn{
+    padding:7px;
+    color: white;
+    background-color: rgb(0, 17, 255);
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+  }
+
+  .add-btn:hover{
+    background-color: rgb(0, 9, 129);
+  }
+
+  .pesquisa{
+    padding: 6px;
+    border-radius: 6px;
+  }
+
+  .pesquisa-btn{
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
   
+  .pesquisa{
+    border: 1px solid black !important;
+    border: black;
+  }
+
+  .pesquisa-btn{
+    border:none;
+    background-color: white;
+  }

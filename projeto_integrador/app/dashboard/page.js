@@ -42,7 +42,7 @@ function Dashboard() {
 
 
 	return (
-		<div>
+		<div className="tela_dashboard">
 			<Menu2 />
 			<div className="container">
 				<aside>
@@ -60,7 +60,7 @@ function Dashboard() {
 							Home
 						</li>
 
-						<li
+						{/* <li
 							onClick={() => {
 								alteraHome(false);
 								alteraFaturamento(true);
@@ -70,7 +70,7 @@ function Dashboard() {
 								alteraFuncionarios(false);
 							}}>
 							Faturamento
-						</li>
+						</li> */}
 
 						<li
 							onClick={() => {
@@ -130,7 +130,7 @@ function Dashboard() {
 				<main>
 					{home == true && <Home />}
 
-					{faturamento == true && <Faturamento />}
+					{/* {faturamento == true && <Faturamento />} */}
 
 					{estoque == true && <Estoque />}
 
