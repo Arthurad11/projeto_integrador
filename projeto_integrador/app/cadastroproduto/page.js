@@ -14,20 +14,21 @@ function CadProduto() {
   const [valor, alteraValor] = useState("");
   const [imagem, alteraImagem] = useState("");
 
-  async function cadastrarProduto() {
+  async function cadastrarProduto(e) {
+    e.preventDefault();
     const obj = {
       nome: nome,
       categoria: categoria,
       valor: valor,
       imagem: imagem,
     };
-
+     console.log(obj)
     try {
       const response = await axios.post(host + "/produtos", obj);
       alert("Produto cadastrado com sucesso");
     } catch (error) {
-      alert("Erro ao cadastrar produto: " + error.message);
       e.preventDefault();
+      alert("Erro ao cadastrar produto: " + error.message);
     }
   }
 
