@@ -66,13 +66,24 @@ function CadProduto() {
           <option value={7}>Porções</option>
           <option value={8}>Espetinhos</option>
         </select>
+
+        <br/><br/>
         <p className="fimpad" > Valor do Produto: </p>
-        <input
+        <input className="fimpad"
           required
           placeholder="Digite o valor do produto..."
           onChange={(e) => alteraValor(e.target.value)}
         />
-        <br /> <br />
+
+        <br/><br/>
+        <p> Link da imagem: </p>
+        <input 
+          required
+          placeholder="Adicione o link da imagem..."
+          onChange={(e) => alteraImagem(e.target.value)}
+        />
+
+        <br/><br/>
         <button className="botao"> Cadastrar </button>
       </div>
     </form>
