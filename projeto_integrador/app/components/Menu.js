@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import "./menu.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Menu() {
 
@@ -15,6 +15,13 @@ function Menu() {
 	const[produtos, alteraProdutos] = useState()
 	const[login, alteraLogin] = useState()
 
+	const [logado, setlogado] = useState(false);
+	
+		useEffect(() => {
+			if (localStorage.getItem("usuario") != null) {
+				setlogado(true);
+			}
+		}, []);
 
 	return (
 		<header>
@@ -30,7 +37,14 @@ function Menu() {
 				<ul>
 					<li onClick={()=> {redirect("/")}}>Home</li>
 					<li onClick={()=> {redirect("/produtos")}}>Produtos</li>
-					<li onClick={()=> {redirect("/login")}}className="login">Login</li>
+					{
+						logado == false &&
+						<li onClick={()=> {redirect("/login")}}className="login">Login</li>
+					}
+					{
+						logado == true && 
+						<li onClick={()=> {redirect("/comanda_garcom")}}>Comandas</li>
+					}
 				</ul>
 			</nav>
 		</header>
