@@ -82,8 +82,8 @@ function Funcionarios() {
 									<td>{i.nome}</td>
 									<td>{i.email}</td>
 									<td>{formataData(i.registro)}</td>
-									<td className="ferramentas">
-										<button onClick={() => atualizaFUNC(i.id)}>Atualizar</button>
+									<td>
+										<button className="ferramentas" onClick={() => atualizaFUNC(i.id)}>Remover</button>
 									</td>
 								</tr>
 							))}

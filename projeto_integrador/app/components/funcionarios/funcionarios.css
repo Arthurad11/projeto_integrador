@@ -45,5 +45,27 @@
     position: relative;
     margin-left: 800px !important;
     
+    padding:7px;
+    color: white;
+    background-color: rgb(0, 17, 255);
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+  }
+
+  .btn-add:hover{
+    background-color: rgb(0, 9, 129)
+  }
+
+  .ferramentas{
+    text-align: center;
+    background-color: red;
+
+    border-radius: 8px;
+    border: none;
+
+    cursor: pointer;
   }
 
